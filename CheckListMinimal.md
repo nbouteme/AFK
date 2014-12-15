@@ -5,11 +5,11 @@ Ici se trouve la liste des consignes minimales qu'il faut respecter
 
 ## Général ##
 Code propre :
-	Validation W3C HTML: http://validator.w3.org/
-	Validation W3C CSS:  http://jigsaw.w3.org/css-validator/
-	Validation PHP : http://phpcodechecker.com/
-	Validation JavaScript : http://www.jslint.com/
-	Validation XML : http://www.xmlvalidation.com/
+	Validation W3C HTML: http://validator.w3.org/  
+	Validation W3C CSS:  http://jigsaw.w3.org/css-validator/  
+	Validation PHP : http://phpcodechecker.com/  
+	Validation JavaScript : http://www.jslint.com/  
+	Validation XML : http://www.xmlvalidation.com/  
 
 Indentation :
    Le style de code est le style Allman, c'est a dire que:
