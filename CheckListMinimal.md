@@ -28,86 +28,86 @@ Technologies minimum à implémenter:
 Autres critères de notation importants :
 
 - [ ] Programmation orienté objet 
-- [ ] Utilisation du modèle MVC [ ] et/ou Modèles de conceptions 
+- [ ] Utilisation du modèle MVC et/ou Modèles de conceptions 
 - [ ] Evolutive,Modulaire,Robuste,Fiable,Fonctionnelle
 
-## Liste des fonctionalitées minimales attendus ##
+## Liste des fonctionalitées minimales attendues ##
 
 Points minimum :
 - [ ] Un menu doit être présent sur toutes les pages web
 
 - [ ] Page d'accueil
-{
-	-[ ] Présentation du site 
-	-[ ] Formulaire Authentification
-	-[ ] Derniers événements organisés
-	-[ ]Nombres d'inscrits connectés
-	-[ ]Nombre d'événements
+{  
+	- [ ] Présentation du site 
+	- [ ] Formulaire Authentification
+	- [ ] Derniers événements organisés
+	- [ ]Nombres d'inscrits connectés
+	- [ ]Nombre d'événements
 }
 
--[ ]Système d'organisation évènements Créer / Inscrire
-{
-	-[ ] Un organisateur 
-	-[ ] Un type d'activité
-	-[ ] Une description
-	-[ ] Une image optionnelle
-	-[ ] Une date
-	-[ ] Un lieu de rendez-vous
-	-[ ] Une liste d'inscrit
+- [ ]Système d'organisation évènements Créer / Inscrire
+{  
+	- [ ] Un organisateur 
+	- [ ] Un type d'activité
+	- [ ] Une description
+	- [ ] Une image optionnelle
+	- [ ] Une date
+	- [ ] Un lieu de rendez-vous
+	- [ ] Une liste d'inscrit
 }
 
 
--[ ] Un formulaire d'inscription
+- [ ] Un formulaire d'inscription
 {
-	-[ ]Enregistrement dans la BDD
-	-[ ]Nom
-	-[ ]Prenom
-	-[ ]Civil
-	-[ ]Pseudonyme
-	-[ ]Email
-	-[ ]Mot de passe encodé
-	-[ ]Avatar
-	-[ ]Autre
-	-[ ]Email de confirmation
+	- [ ] Enregistrement dans la BDD
+	- [ ] Nom
+	- [ ] Prenom
+	- [ ] Civil
+	- [ ] Pseudonyme
+	- [ ] Email
+	- [ ] Mot de passe encodé
+	- [ ] Avatar
+	- [ ] Autre
+	- [ ] Email de confirmation
 }
 
--[ ] Un annuaire des inscrits
+- [ ] Un annuaire des inscrits
 {
-	-[ ]Liste des inscrits par ordre lexicographique des pseudonymes
-	-[ ]Ajouter un bouton d'ajout d'amis
+	- [ ] Liste des inscrits par ordre lexicographique des pseudonymes
+	- [ ] Ajouter un bouton d'ajout d'amis
 }
 
--[ ] Une page de profil
+- [ ] Une page de profil
 {
-	-[ ]Afficher les informations personnelles (publique)
-	-[ ]Ses évènements (Organisateur/Inscrit)
+	- [ ] Afficher les informations personnelles (publique)
+	- [ ] Ses évènements (Organisateur/Inscrit)
 }
 
--[ ] Une liste d'amis
+- [ ] Une liste d'amis
 {
-	-[ ] Accéder à l'ensemble de nos amis
-	-[ ] Supprimer un de ses amis.
+	- [ ] Accéder à l'ensemble de nos amis
+	- [ ] Supprimer un de ses amis.
 }
--[ ] Une messagerie personnelle
+- [ ] Une messagerie personnelle
 {
-	-[ ]Visionner ses messages par ordre antéchronologique, en 
+	- [ ] Visionner ses messages par ordre antéchronologique, en 
 	distinguant s’ils sont lus ou non
-	-[ ] Les messages ne doivent pas être stocké en BDD
-	-[ ] Envoyer des messages aux autres inscrits ami ou non
-	-[ ] Voir les messages précédemment envoyé
+	- [ ] Les messages ne doivent pas être stocké en BDD
+	- [ ] Envoyer des messages aux autres inscrits ami ou non
+	- [ ] Voir les messages précédemment envoyé
 }
 
--[ ] Un agenda personnel avec calendrier pour chaque inscrit
+- [ ] Un agenda personnel avec calendrier pour chaque inscrit
 {
-	-[ ] Voir les événements auquel il est inscrit
-	-[ ] Se dés-inscrire d'un événement.
+	- [ ] Voir les événements auquel il est inscrit
+	- [ ] Se dés-inscrire d'un événement.
 }
 
--[ ] Une page de lien vers des sites partenaires
--[ ] Pour une longue liste, il faut une pagination complète 
--[ ] Pour les grandes pages, ancrage permettant de remonter.
--[ ] Balise meta/description/keyword renseigné pour chaque page web
--[ ] Un favicon sur toutes les pages un favicon (contenant  plusieurs images de différent formats pour un affichage optimal en 
+- [ ] Une page de lien vers des sites partenaires
+- [ ] Pour une longue liste, il faut une pagination complète 
+- [ ] Pour les grandes pages, ancrage permettant de remonter.
+- [ ] Balise meta/description/keyword renseigné pour chaque page web
+- [ ] Un favicon sur toutes les pages un favicon (contenant  plusieurs images de différent formats pour un affichage optimal en 
 fonction de la taille et du nombre de couleurs supporté par le système d’exploitation)
 
 
