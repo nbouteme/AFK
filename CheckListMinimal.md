@@ -12,7 +12,7 @@ Code propre :
 	Validation XML : http://www.xmlvalidation.com/  
 
 Indentation :
-   Le style de code est le style Allman, c'est a dire que:
+   Le style de code est le style Allman, c'est a dire que:  
 	- Toute accolade délimitant un bloc d'instructions est seule sur sa ligne.  
 	- Les lignes vides ne doivent pas contenir d'espaces.    
 	- Une ligne vide doit suivre une ou plusieurs déclarations succesives.  
@@ -45,7 +45,7 @@ Points minimum :
 	- [ ]Nombre d'événements
 
 
-- [ ]Système d'organisation évènements Créer / Inscrire
+- [ ] Système d'organisation évènements Créer / Inscrire
  
 	- [ ] Un organisateur 
 	- [ ] Un type d'activité
