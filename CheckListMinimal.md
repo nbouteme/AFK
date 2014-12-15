@@ -13,9 +13,9 @@ Code propre :
 
 Indentation :
    Le style de code est le style Allman, c'est a dire que:
-	- Toute accolade délimitant un bloc d'instructions est seule sur sa ligne.
-	- Les lignes vides ne doivent pas contenir d'espaces.
-	- Une ligne vide doit suivre une ou plusieurs déclarations succesives.
+	- Toute accolade délimitant un bloc d'instructions est seule sur sa ligne.  
+	- Les lignes vides ne doivent pas contenir d'espaces.  
+	- Une ligne vide doit suivre une ou plusieurs déclarations succesives.  
 	
 Technologies minimum à implémenter:
 - [ ] PHP
@@ -27,9 +27,9 @@ Technologies minimum à implémenter:
 
 Autres critères de notation importants :
 
-- [ ]Programmation orienté objet 
-- [ ]Utilisation du modèle MVC [ ] et/ou Modèles de conceptions 
-- [ ]Evolutive,Modulaire,Robuste,Fiable,Fonctionnelle
+- [ ] Programmation orienté objet 
+- [ ] Utilisation du modèle MVC [ ] et/ou Modèles de conceptions 
+- [ ] Evolutive,Modulaire,Robuste,Fiable,Fonctionnelle
 
 ## Liste des fonctionalitées minimales attendus ##
 
