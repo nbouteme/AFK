@@ -11,11 +11,11 @@ Code propre :
 	Validation JavaScript : http://www.jslint.com/  
 	Validation XML : http://www.xmlvalidation.com/  
 
-Indentation :
+Indentation :  
    Le style de code est le style Allman, c'est a dire que:  
-	- Toute accolade délimitant un bloc d'instructions est seule sur sa ligne.  
-	- Les lignes vides ne doivent pas contenir d'espaces.    
-	- Une ligne vide doit suivre une ou plusieurs déclarations succesives.  
+		- Toute accolade délimitant un bloc d'instructions est seule sur sa ligne.  
+		- Les lignes vides ne doivent pas contenir d'espaces.    
+		- Une ligne vide doit suivre une ou plusieurs déclarations succesives.  
 	
 Technologies minimum à implémenter:
 - [ ] PHP
@@ -41,8 +41,8 @@ Points minimum :
 	- [ ] Présentation du site 
 	- [ ] Formulaire Authentification
 	- [ ] Derniers événements organisés
-	- [ ]Nombres d'inscrits connectés
-	- [ ]Nombre d'événements
+	- [ ] Nombres d'inscrits connectés
+	- [ ] Nombre d'événements
 
 
 - [ ] Système d'organisation évènements Créer / Inscrire
