@@ -14,7 +14,7 @@ Code propre :
 Indentation :
    Le style de code est le style Allman, c'est a dire que:
 	- Toute accolade délimitant un bloc d'instructions est seule sur sa ligne.  
-	- Les lignes vides ne doivent pas contenir d'espaces.  
+	- Les lignes vides ne doivent pas contenir d'espaces.    
 	- Une ligne vide doit suivre une ou plusieurs déclarations succesives.  
 	
 Technologies minimum à implémenter:
@@ -37,16 +37,16 @@ Points minimum :
 - [ ] Un menu doit être présent sur toutes les pages web
 
 - [ ] Page d'accueil
-{  
+ 
 	- [ ] Présentation du site 
 	- [ ] Formulaire Authentification
 	- [ ] Derniers événements organisés
 	- [ ]Nombres d'inscrits connectés
 	- [ ]Nombre d'événements
-}
+
 
 - [ ]Système d'organisation évènements Créer / Inscrire
-{  
+ 
 	- [ ] Un organisateur 
 	- [ ] Un type d'activité
 	- [ ] Une description
@@ -54,11 +54,11 @@ Points minimum :
 	- [ ] Une date
 	- [ ] Un lieu de rendez-vous
 	- [ ] Une liste d'inscrit
-}
+
 
 
 - [ ] Un formulaire d'inscription
-{
+
 	- [ ] Enregistrement dans la BDD
 	- [ ] Nom
 	- [ ] Prenom
@@ -69,39 +69,39 @@ Points minimum :
 	- [ ] Avatar
 	- [ ] Autre
 	- [ ] Email de confirmation
-}
+
 
 - [ ] Un annuaire des inscrits
-{
+
 	- [ ] Liste des inscrits par ordre lexicographique des pseudonymes
 	- [ ] Ajouter un bouton d'ajout d'amis
-}
+
 
 - [ ] Une page de profil
-{
+
 	- [ ] Afficher les informations personnelles (publique)
 	- [ ] Ses évènements (Organisateur/Inscrit)
-}
+
 
 - [ ] Une liste d'amis
-{
+
 	- [ ] Accéder à l'ensemble de nos amis
 	- [ ] Supprimer un de ses amis.
-}
+
 - [ ] Une messagerie personnelle
-{
+
 	- [ ] Visionner ses messages par ordre antéchronologique, en 
 	distinguant s’ils sont lus ou non
 	- [ ] Les messages ne doivent pas être stocké en BDD
 	- [ ] Envoyer des messages aux autres inscrits ami ou non
 	- [ ] Voir les messages précédemment envoyé
-}
+
 
 - [ ] Un agenda personnel avec calendrier pour chaque inscrit
-{
+
 	- [ ] Voir les événements auquel il est inscrit
 	- [ ] Se dés-inscrire d'un événement.
-}
+
 
 - [ ] Une page de lien vers des sites partenaires
 - [ ] Pour une longue liste, il faut une pagination complète 
