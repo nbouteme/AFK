@@ -14,6 +14,6 @@ class Config
     {
         $section = explode('.', $value)[0];
         $key = explode('.', $value)[1];
-        return isset(self::$config[$section][$key])?self::$config[$section][$key]:null;
+        return isset(self::$config[$section][$key]) ? self::$config[$section][$key] : null;
     }
 }

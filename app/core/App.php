@@ -9,7 +9,7 @@ class App
 
         spl_autoload_register(function($class)
 			      {
-				  require 'app/models/' . $classModel . 'Model.php';
+				  require 'app/models/' . $class . 'Model.php';
 			      });
         Config::load();
     }
