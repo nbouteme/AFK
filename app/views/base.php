@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-	<title>/*<?=$username?>*/AFK</title>
+	<title>AFK</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -13,8 +13,6 @@
 	  <p>la</p>
 	  <p>barre</p>
 	  <p>laterale</p>
-	  <?php /*if(isset($_SESSION['loggedUser'])) echo '
-	  <p>Bouton de deconnexion</p>';*/?>
 	</nav>
 	@Content@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
