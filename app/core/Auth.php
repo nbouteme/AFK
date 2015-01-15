@@ -2,5 +2,20 @@
 
 class Auth
 {
-// fonction qui test si une email correspond a un mdp
+    public static function validate($id, $password)
+    {
+        if(!Users::exists($id)) return false;
+        if(password_verify($password, Users::getPassword($id)))
+        {
+            $_SESSION['user'] = Users::getUsername($id);
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function isLoggedIn()
+    {
+        return isset($_SESSION['user']);
+    }
 }

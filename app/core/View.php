@@ -14,7 +14,7 @@ class View
 
 		if (!empty(self::$template))
 		{
-            self::$template = str_replace('@content', $content, self::$template);
+            self::$template = str_replace('@Content@', $content, self::$template);
             echo self::$template;
         }
 		else
@@ -26,7 +26,7 @@ class View
     {
         extract($data);
         ob_start();
-            include APP . 'views/' . $templateName . '.php';
+            include 'app/views/' . $templateName . '.php';
         self::$template = ob_get_clean();
     }
 }
