@@ -9,6 +9,8 @@ class App
         require_once 'app/core/Url.php';
         require_once 'app/core/Router.php';
         require_once 'app/core/View.php';
+        require_once 'app/core/Database.php';
+        require_once 'app/core/Auth.php';
         require_once 'app/core/Config.php';
 
         spl_autoload_register(
