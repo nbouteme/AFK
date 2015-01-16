@@ -1,21 +1,31 @@
-nav
-{
-    transition: 0.3s;
-	-o-transition: 0.3s;
-	-moz-transition: 0.3s;
-	-webkit-transition: 0.3s;
-
-	background: #262f3e;
-	min-height: 100%;
-	overflow: hidden;
-	position: fixed;
-	width: 50px;
-	z-index: 99999;
+html{
+	font: normal 14px Roboto,arial,sans-serif;
+	height: auto;
+	height: 100%;
 }
 
-nav p
+body{
+	background-image:url(geek.png);
+	color: white;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
+}
+
+nav
 {
-	display: block;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    background: #262f3e;
+    min-height: 100%;
+    overflow: hidden;
+    position: fixed;
+    width: 64px;
+    z-index: 99999;
 }
 
 nav a
@@ -36,7 +46,8 @@ nav a:hover
 
 nav a i
 {
-    font-size: 2.3em;
+    font-size: 1.25em;
+    padding-left: 4px;
 }
 
 nav .fa-times
@@ -69,9 +80,9 @@ nav .nav__avatar div
 
 nav span
 {
-    font-size: 0.85em;
+    font-size: 0.95em;
     left: 51px;
-    line-height: 2.5;
+    line-height: 1.3;
     position: absolute;
     white-space: nowrap;
 }
@@ -147,17 +158,48 @@ nav:hover .nav__header .logo__wrap
     margin-left: 33px;
 }
 
-.clearfix
-{
-	clear: both;
-	display: block;
+#first_page, #second_page, #third_page, #main_connexion_page{
+	text-align: center;
+	height: 100%;
 }
 
-#container-main
-{
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-	margin-left: 50px;
+#logo{
+	height: 60%;
 }
+
+#form-login, #form-suscribe{
+    background-color: #EDEDED;
+    color : black;
+    width: 300px;
+    height: 180px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    margin: auto;
+    border-color:#d2d2d2;
+    border-width: 3px;
+    box-shadow:0 1px 0 #cfcfcf;
+    position: relative;
+  	top: 25%;
+  	/*transform: translateY(-50%);*/
+}
+
+#userName{
+	margin-bottom: 5px;
+}
+
+#form-login{
+	vertical-align: middle;
+}
+
+.wrapper{
+	padding-top: 10px;
+}
+
+h4{
+	padding-bottom: 15px;
+	font-size: 18px;
+}
+
