@@ -198,6 +198,10 @@ nav:hover .nav__header .logo__wrap
 	padding-top: 10px;
 }
 
+#btnValider{
+    background-color: red;
+}
+
 h4{
 	padding-bottom: 15px;
 	font-size: 18px;
