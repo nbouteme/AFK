@@ -8,17 +8,8 @@ class UserController
         View::render('profile/login');
     }
 
-    public function profile($user)
-    {
-        $data = array();
-        $data['name'] = $user;
-        // A completer
-        View::render('profile/user', $data);
-    }
-
     public function register()
     {
-        View::addTemplate('base');
         if(!Auth::isLoggedIn())
             View::render('profile/register');
         else
@@ -56,16 +47,4 @@ class UserController
         session_destroy();
         Url::redirectTo('/');
     }
-
-    public function showEdit($user)
-    {
-        if($user != $_SESSION['user'])
-            Url::redirectTo('/profile/' . $_SESSION['user']);
-        $data = array();
-        $data['name'] = $user;
-        $data['desc'] = Users::getDescription($user);
-        
-        View::render('profile/user', $data);        
-    }
-    
 }

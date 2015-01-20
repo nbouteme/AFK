@@ -1,10 +1,11 @@
-html{
+html
+{
 	font: normal 14px Roboto,arial,sans-serif;
 	height: auto;
-	height: 100%;
 }
 
-body{
+body
+{
 	background-image:url(/assets/img/geek.png);
 	color: white;
 	background-position: center;
@@ -167,11 +168,10 @@ nav:hover .nav__header .logo__wrap
 	height: 60%;
 }
 
-#form-login, #form-suscribe{
+#form-login
+{
     background-color: #EDEDED;
     color : black;
-    width: 300px;
-    height: 180px;
     padding-top: 10px;
     padding-bottom: 15px;
     padding-left: 10px;
@@ -181,55 +181,11 @@ nav:hover .nav__header .logo__wrap
     border-color:#d2d2d2;
     border-width: 3px;
     box-shadow:0 1px 0 #cfcfcf;
-    position: relative;
-	top: 25%;
-	/*transform: translateY(-50%);*/
-}
-
-#userName{
-	margin-bottom: 5px;
-}
-
-#form-login{
-	vertical-align: middle;
-}
-
-.wrapper{
-	padding-top: 10px;
 }
 
 h4{
 	padding-bottom: 15px;
 	font-size: 18px;
-}
-html{
-	font: normal 14px Roboto,arial,sans-serif;
-	height: auto;
-	height: 100%;
-}
-
-body{
-	background-image:url(/assets/img/geek.png);
-	color: white;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	height: 100%;
-}
-
-nav
-{
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    background: #262f3e;
-    min-height: 100%;
-    overflow: hidden;
-    position: fixed;
-    width: 64px;
-    z-index: 99999;
 }
 
 nav a
@@ -326,16 +282,6 @@ nav .logo__wrap
     transition: 0.3s;
 }
 
-nav .nav__header
-{
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 3px;
-    margin-top: -20px;
-    margin-bottom: 8px;
-    background: #19202c;
-}
-
 nav:hover
 {
     width: 160px;
@@ -362,53 +308,17 @@ nav:hover .nav__header .logo__wrap
     margin-left: 33px;
 }
 
-#first_page, #second_page, #third_page, #main_connexion_page{
-	text-align: center;
-	height: 100%;
-}
-
 #logo{
 	height: 60%;
 }
 
 #form-login, #form-suscribe{
     background-color: #EDEDED;
-    color : black;
-    width: 300px;
-    height: 180px;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    margin: auto;
     border-color:#d2d2d2;
-    border-width: 3px;
-    box-shadow:0 1px 0 #cfcfcf;
-    position: relative;
-	top: 25%;
 	/*transform: translateY(-50%);*/
 }
 
-#userName{
-	margin-bottom: 5px;
-}
-
-#form-login{
-	vertical-align: middle;
-}
-
-.wrapper{
-	padding-top: 10px;
-}
-
-h4{
-	padding-bottom: 15px;
-	font-size: 18px;
-}
-
-#container-main
+#main_connexion_page
 {
-	position: relative;
-	top: calc(50vh - 16%);
+	margin-top: 15%;
 }

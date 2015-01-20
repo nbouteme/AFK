@@ -1,31 +1,21 @@
-html{
-	font: normal 14px Roboto,arial,sans-serif;
-	height: auto;
-	height: 100%;
-}
-
-body{
-	background-image:url(/assets/img/geek.png);
-	color: white;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	height: 100%;
-}
-
 nav
 {
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
     transition: 0.3s;
-    background: #262f3e;
-    min-height: 100%;
-    overflow: hidden;
-    position: fixed;
-    width: 64px;
-    z-index: 99999;
+	-o-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;
+
+	background: #262f3e;
+	min-height: 100%;
+	overflow: hidden;
+	position: fixed;
+	width: 50px;
+	z-index: 99999;
+}
+
+nav p
+{
+	display: block;
 }
 
 nav a
@@ -46,8 +36,7 @@ nav a:hover
 
 nav a i
 {
-    font-size: 1.25em;
-    padding-left: 4px;
+    font-size: 2.3em;
 }
 
 nav .fa-times
@@ -80,9 +69,9 @@ nav .nav__avatar div
 
 nav span
 {
-    font-size: 0.95em;
+    font-size: 0.85em;
     left: 51px;
-    line-height: 1.3;
+    line-height: 2.5;
     position: absolute;
     white-space: nowrap;
 }
@@ -158,66 +147,17 @@ nav:hover .nav__header .logo__wrap
     margin-left: 33px;
 }
 
-#first_page, #second_page, #third_page, #main_connexion_page{
-	text-align: center;
-	height: 100%;
-}
-
-#logo{
-	height: 60%;
-}
-
-#form-login, #form-suscribe{
-    background-color: #EDEDED;
-    color : black;
-    width: 300px;
-    height: 180px;
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 5px;
-    margin: auto;
-    border-color:#d2d2d2;
-    border-width: 3px;
-    box-shadow:0 1px 0 #cfcfcf;
-    position: relative;
-  	top: 25%;
-  	/*transform: translateY(-50%);*/
-}
-
-#userName{
-	margin-bottom: 5px;
-}
-
-.nav-user-image
+.clearfix
 {
-	min-width:  50px;
-	max-width:  50px;
-	min-height: 50px;
-	max-height: 50px;
-	box-shadow: 0 0 48px -10px #111;
-	background-size: cover;
-	background-image:url('https://avatars0.githubusercontent.com/u/8192824?v=3&s=460');
-	
+	clear: both;
+	display: block;
 }
 
-.nav-user-name
+#container-main
 {
-	margin-left: 16px;
-	line-height: 4.5;
-	color: white;
-}
-
-#form-login{
-	vertical-align: middle;
-}
-
-.wrapper{
-	padding-top: 10px;
-}
-
-h4{
-	padding-bottom: 15px;
-	font-size: 18px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+	margin-left: 50px;
 }

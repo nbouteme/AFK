@@ -3,7 +3,7 @@
 {% block title %}{{ name }}{% endblock %}
 {% block head %}
 	<link rel="stylesheet" href="/assets/css/userstyle.css">
-	<link rel="stylesheet" href="/path/to/user/style">
+	<link rel="stylesheet" href="/profile/{{ name }}/style">
 	{{ parent() }}
 {% endblock %}
 
@@ -19,7 +19,7 @@
 						{% endif %}
 					</h1> 
 					<div class="desc">
-						Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
+						{{userdesc}}
 					</div>
 				</div>
 				<div class="user-actions">

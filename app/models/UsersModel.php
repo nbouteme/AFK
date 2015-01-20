@@ -14,6 +14,8 @@ class Users
 			$prenom,
 			$password,
 			$pseudo,]);
+
+        self::saveDesc($pseudo, '');
 	}
 
     private static function getQueryAttribute($id, $attribute)
@@ -47,11 +49,34 @@ class Users
 
     public static function getDescription($id)
     {
-        $query = self::getQueryAttribute($id, 'IDUSERDESC');
+        $data = array();
+        $query = self::getQueryAttribute($id, 'PSEUDO');
         $query->execute([$id]);
         if($query->columnCount() !== 1)
             die('Couldn\'t find description in database');
-        $query2 =  Database::$PDO->prepare("SELECT $attribute FROM USERS WHERE PSEUDO = ?");
+        $username = $query->fetch()['PSEUDO'];
+
+        $fn = 'app/cache/user-' .  md5($username) . '.xml';
+        $fd = fopen($fn, 'r');
+        $xmlStr = fread($fd, filesize($fn));
+        fclose($fd);
+        $xml = new SimpleXMLElement($xmlStr);
+        return (string)$xml->desc;
     }
-    
+
+    public static function saveDesc($id, $data)
+    {
+        extract($data);
+        $xmlStr = new SimpleXMLElement('<xml/>');
+        $xmlStr->addChild('desc', $desc);
+        $query = self::getQueryAttribute($id, 'PSEUDO');
+        $query->execute([$id]);
+        if($query->columnCount() !== 1)
+            die('Couldn\'t find description in database');
+        $username = $query->fetch()['PSEUDO'];
+
+        $fn = 'app/cache/user-' .  md5($username) . '.xml';
+        $xmlStr ->asXML($fn);
+    }
+
 }
