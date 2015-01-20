@@ -161,3 +161,22 @@ nav:hover .nav__header .logo__wrap
     transition: 0.3s;
 	margin-left: 50px;
 }
+
+.nav-user-image
+{
+	min-width:  50px;
+	max-width:  50px;
+	min-height: 50px;
+	max-height: 50px;
+	box-shadow: 0 0 48px -10px #111;
+	background-size: cover;
+	background-image:url('https://avatars0.githubusercontent.com/u/8192824?v=3&s=460');
+	
+}
+
+.nav-user-name
+{
+	margin-left: 16px;
+	line-height: 4.5;
+	color: white;
+}

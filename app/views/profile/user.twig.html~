@@ -1,0 +1,126 @@
+{% extends "base.twig.html" %}
+
+{% block title %}{{ name }}{% endblock %}
+{% block head %}
+	<link rel="stylesheet" href="/assets/css/userstyle.css">
+	<link rel="stylesheet" href="/path/to/user/style">
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+		<div class="user-cover">
+			<div class="user-info">
+				<div class="user-image">
+				</div>
+				<div class="user-name-box">
+					<h1>{{ name }}
+						{% if loggedUser() is same as(name) %}
+							<a href="/profile/user/edit" class="pull-right"><i class="fa fa-edit"></i></a>
+						{% endif %}
+					</h1> 
+					<div class="desc">
+						Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
+					</div>
+				</div>
+				<div class="user-actions">
+					{% if (loggedIn()) and (not loggedUser() is same as(name))%}
+						<div class="user-action">
+							<a href="/message/{{ name }}"><i class="fa fa-comment"></i>Envoyer un message</a>
+						</div><br/>
+						<div class="user-action">
+							<a href="/addfriend/{{ name }}"><i class="fa fa-plus-circle"></i>Ajouter en ami</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<p>
+			Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In
+			id erat non orci commodo lobortis.  Proin neque massa,
+			cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.
+			Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+			ac felis vel velit tristique imperdiet.  Donec at pede.
+			Etiam vel neque nec dui dignissim bibendum.  Vivamus id
+			enim.  Phasellus neque orci, porta a, aliquet quis, semper
+			a, massa.  Phasellus purus.  Pellentesque tristique
+			imperdiet tortor.  Nam euismod tellus id erat.
+		</p>
+		<p>
+			Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In
+			id erat non orci commodo lobortis.  Proin neque massa,
+			cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.
+			Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+			ac felis vel velit tristique imperdiet.  Donec at pede.
+			Etiam vel neque nec dui dignissim bibendum.  Vivamus id
+			enim.  Phasellus neque orci, porta a, aliquet quis, semper
+			a, massa.  Phasellus purus.  Pellentesque tristique
+			imperdiet tortor.  Nam euismod tellus id erat.
+		</p>
+		<p>
+			Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In
+			id erat non orci commodo lobortis.  Proin neque massa,
+			cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.
+			Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+			ac felis vel velit tristique imperdiet.  Donec at pede.
+			Etiam vel neque nec dui dignissim bibendum.  Vivamus id
+			enim.  Phasellus neque orci, porta a, aliquet quis, semper
+			a, massa.  Phasellus purus.  Pellentesque tristique
+			imperdiet tortor.  Nam euismod tellus id erat.
+		</p>
+		<p>
+			Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In
+			id erat non orci commodo lobortis.  Proin neque massa,
+			cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.
+			Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+			ac felis vel velit tristique imperdiet.  Donec at pede.
+			Etiam vel neque nec dui dignissim bibendum.  Vivamus id
+			enim.  Phasellus neque orci, porta a, aliquet quis, semper
+			a, massa.  Phasellus purus.  Pellentesque tristique
+			imperdiet tortor.  Nam euismod tellus id erat.
+		</p>
+		<p>
+			Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In
+			id erat non orci commodo lobortis.  Proin neque massa,
+			cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.
+			Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+			ac felis vel velit tristique imperdiet.  Donec at pede.
+			Etiam vel neque nec dui dignissim bibendum.  Vivamus id
+			enim.  Phasellus neque orci, porta a, aliquet quis, semper
+			a, massa.  Phasellus purus.  Pellentesque tristique
+			imperdiet tortor.  Nam euismod tellus id erat.
+		</p>
+		<p>
+			Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In
+			id erat non orci commodo lobortis.  Proin neque massa,
+			cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.
+			Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+			ac felis vel velit tristique imperdiet.  Donec at pede.
+			Etiam vel neque nec dui dignissim bibendum.  Vivamus id
+			enim.  Phasellus neque orci, porta a, aliquet quis, semper
+			a, massa.  Phasellus purus.  Pellentesque tristique
+			imperdiet tortor.  Nam euismod tellus id erat.
+		</p>
+		<p>
+			Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In
+			id erat non orci commodo lobortis.  Proin neque massa,
+			cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.
+			Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+			ac felis vel velit tristique imperdiet.  Donec at pede.
+			Etiam vel neque nec dui dignissim bibendum.  Vivamus id
+			enim.  Phasellus neque orci, porta a, aliquet quis, semper
+			a, massa.  Phasellus purus.  Pellentesque tristique
+			imperdiet tortor.  Nam euismod tellus id erat.
+		</p>
+		<p>
+			Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In
+			id erat non orci commodo lobortis.  Proin neque massa,
+			cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.
+			Praesent fermentum tempor tellus.  Nullam tempus.  Mauris
+			ac felis vel velit tristique imperdiet.  Donec at pede.
+			Etiam vel neque nec dui dignissim bibendum.  Vivamus id
+			enim.  Phasellus neque orci, porta a, aliquet quis, semper
+			a, massa.  Phasellus purus.  Pellentesque tristique
+			imperdiet tortor.  Nam euismod tellus id erat.
+		</p>
+{% endblock %}
+

@@ -4,7 +4,9 @@ class MainController
 {
     public function home()
     {
-        View::render('base');
+        if(Auth::isLoggedIn())
+                  Url::redirectTo('/profile/' . $_SESSION['user']);
+        View::render('home', array('name' => 'lel'));
     }
 
     public function fallback()

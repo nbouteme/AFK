@@ -1,0 +1,2 @@
+<form action="data-processing.php" method="post">
+     <input type="text" name ="id"/>Identifiant</br>

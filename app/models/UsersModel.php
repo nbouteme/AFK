@@ -44,4 +44,14 @@ class Users
 		$query->execute([$id]);
         return $query->columnCount() === 1;
 	}
+
+    public static function getDescription($id)
+    {
+        $query = self::getQueryAttribute($id, 'IDUSERDESC');
+        $query->execute([$id]);
+        if($query->columnCount() !== 1)
+            die('Couldn\'t find description in database');
+        $query2 =  Database::$PDO->prepare("SELECT $attribute FROM USERS WHERE PSEUDO = ?");
+    }
+    
 }

@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+a
+{
+	color: black;
+	text-decoration: none;
+}
+.user-actions
+{
+	width: 40%;
+	text-shadow: 0 0 16px #fff, 0 0 16px #fff;
+}
+
+.user-action
+{
+	font-size: 1.5em;
+	text-align: right;
+	margin-right: 16px;
+}
+
+.user-cover
+{
+	height: 320px;
+	background-size: cover;
+	background-attachment: fixed;
+	background-image: url('http://cdn03.androidauthority.net/wp-content/uploads/2012/06/wallpaper_03.jpg');
+	box-shadow: 0 0 12px #000;
+}
+
+.user-info
+{
+	width: 100%;
+	display: inline-flex;
+	padding-top: 32px;
+	padding-left: 32px;
+}
+
+.user-name-box
+{
+	margin-left: 32px;
+	width: 40%;
+}
+
+.user-image
+{
+	min-width: 192px;
+	min-height: 192px;
+	max-width: 192px;
+	max-height: 192px;
+	box-shadow: 0 0 48px -10px #111;
+	border-radius: 192px;
+	background-size: cover;
+	background-image: url('https://avatars0.githubusercontent.com/u/8192824?v=3&s=460');
+}
+
+h1
+{
+	text-shadow: 0 0 16px #fff, 0 0 16px #fff;
+	display: inline-block;
+}
+
+i
+{
+	margin-left: 16px;
+	margin-right: 16px;
+}

@@ -2,31 +2,36 @@
 
 class View
 {
-	static private $template;
-
-    // data est un tableau associatif, la fonction extract permet d'avoir les clés du tableau accessible comme des variable, dans le code de la vue.
+    static private $twig;
+    static private $loader;
     static public function render($view, $data = array())
     {
-        extract($data);
-        ob_start();
-        include 'app/views/' . $view . '.php';
-		$content = ob_get_clean();
-
-		if (!empty(self::$template))
-		{
-            self::$template = str_replace('@Content@', $content, self::$template);
-            echo self::$template;
-        }
-		else
-            echo $content;
+        echo self::$twig->render($view . '.twig.html', $data);
     }
 
-	// permet de mettre en cache le template
-	static public function addTemplate($templateName, array $data = array())
+    static public function load()
     {
-        extract($data);
-        ob_start();
-            include 'app/views/' . $templateName . '.php';
-        self::$template = ob_get_clean();
+        self::$loader = new Twig_Loader_Filesystem('/www/app/views');
+        self::$twig = new Twig_Environment(self::$loader);
+        $functions = array();
+
+        $functions[] = new Twig_SimpleFunction('url', function($rel)
+        {
+            return Url::to($rel);
+        });
+
+        $functions[] = new Twig_SimpleFunction('loggedIn', function()
+        {
+            return Auth::isLoggedIn();
+        });
+
+        $functions[] = new Twig_SimpleFunction('loggedUser', function()
+        {
+            return $_SESSION['user'];
+        });
+
+        foreach($functions as $f)
+        self::$twig->addFunction($f);
     }
 }
+View::load();

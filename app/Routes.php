@@ -17,4 +17,13 @@ Router::register('POST', ['url'       => '/login'         ,
 Router::register('GET', ['url'        => '/logout'        ,
                          'controller' => 'UserController' ,
                          'action'     => 'logout']);
+Router::register('GET', ['url'        => '/profile/{user}',
+                         'controller' => 'UserController' ,
+                         'action'     => 'profile']);
+Router::register('GET', ['url'        => '/profile/{user}/edit'  ,
+                         'controller' => 'UserController'        ,
+                         'action'     => 'showEdit']);
+Router::register('POST', ['url'       => '/profile/{user}/edit'  ,
+                         'controller' => 'UserController'        ,
+                         'action'     => 'saveEdit']);
 ?>

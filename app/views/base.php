@@ -27,7 +27,7 @@
         </nav>
         <div id="container-main">
             <div class="container clearfix home">
-                @Content@
+                {% block content %}{% endblock %}
             </div>
         </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

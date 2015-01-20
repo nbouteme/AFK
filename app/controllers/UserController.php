@@ -5,8 +5,15 @@ class UserController
     // Affiche la page de login
     public function login()
     {
-        View::addTemplate('base');
         View::render('profile/login');
+    }
+
+    public function profile($user)
+    {
+        $data = array();
+        $data['name'] = $user;
+        // A completer
+        View::render('profile/user', $data);
     }
 
     public function register()
@@ -15,7 +22,7 @@ class UserController
         if(!Auth::isLoggedIn())
             View::render('profile/register');
         else
-            Url::redirectTo('/');
+            Url::redirectTo('/profile/' . $_SESSION['user']);
     }
 
     // Authentifie l'utilisateur
@@ -39,7 +46,8 @@ class UserController
         $data['civilite'] = $_POST['civilite'];
         Database::connect();
         Users::create($data);
-        Database::disconnect();
+        if(Auth::validate($_POST['pseudo'], $_POST['password']))
+            Url::redirectTo('/profile/' . $_SESSION['user'] . '/edit');
     }
 
     public function logout()
@@ -48,4 +56,16 @@ class UserController
         session_destroy();
         Url::redirectTo('/');
     }
+
+    public function showEdit($user)
+    {
+        if($user != $_SESSION['user'])
+            Url::redirectTo('/profile/' . $_SESSION['user']);
+        $data = array();
+        $data['name'] = $user;
+        $data['desc'] = Users::getDescription($user);
+        
+        View::render('profile/user', $data);        
+    }
+    
 }
