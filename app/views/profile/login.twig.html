@@ -12,12 +12,16 @@
 {% endblock %}
 
 {% block content %}
-	<div id="main_connexion_page">
+	<div class="col-md-4 col-md-offset-4 "id="main_connexion_page">
 		<div id="form-login">
 			<form method="post" action="/login">
 				<h4>Connectez-vous</h4>
-				<input name="pseudo" type="text" id="userName" class="form-control input-sm chat-input" placeholder="Nom d'utilisateur" />
-				<input name="password" type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Mot de passe" />
+				<div class="form-group">
+					<input name="pseudo" type="text" id="userName" class="form-control input-sm chat-input" placeholder="Nom d'utilisateur" />
+				</div>
+				<div class="form-group">
+					<input name="password" type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Mot de passe" />
+				</div>
 				<div class="wrapper">
 					<span class="group-btn">     
 						<input type="submit" value="Se connecter" class="btn btn-primary btn-md"/>
