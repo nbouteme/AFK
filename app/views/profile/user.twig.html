@@ -3,8 +3,8 @@
 {% block title %}{{ name }}{% endblock %}
 {% block head %}
 	<link rel="stylesheet" href="/assets/css/userstyle.css">
-	<link rel="stylesheet" href="/profile/{{ name }}/style">
 	{{ parent() }}
+	<link rel="stylesheet" href="/profile/{{ name }}/style">
 {% endblock %}
 
 {% block content %}

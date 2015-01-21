@@ -54,4 +54,7 @@ Router::register('GET', ['url'        => '/profile/{user}/bpic' ,
 Router::register('GET', ['url'        => '/profile/{user}/style' ,
                          'controller' => 'ProfileController'     ,
                          'action'     => 'generateStyle']);
+Router::register('GET', ['url'        => '/self/ppic' ,
+                         'controller' => 'ProfileController'     ,
+                         'action'     => 'getSelfPpicture']);
 ?>

@@ -78,6 +78,11 @@ class ProfileController
         $this->getpicture($user, 'p');
     }
 
+    public function getSelfPpicture()
+    {
+        $this->getpicture($_SESSION['user'], 'p');
+    }
+
     public function generateStyle($user)
     {
         header('Content-Type: text/css');
@@ -86,6 +91,12 @@ class ProfileController
 {
 	background-image: url('/profile/$user/ppic');
 }
+
+.nav-user-image
+{
+	background-image: url('/profile/" . $_SESSION['user'] . "/ppic');
+}
+
 .user-cover
 {
 	background-image: url('/profile/$user/bpic');
