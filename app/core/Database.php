@@ -2,10 +2,11 @@
 
 class Database
 {
-    public static $PDO;
+    public static $PDO = null;
 
     public static function connect()
 	{
+        if(self::$PDO != null) return;
 		$host  = Config::get('Database.Host');
 		$pass  = Config::get('Database.Pass');
 		$user  = Config::get('Database.User');

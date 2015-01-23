@@ -47,7 +47,7 @@ hr, h1, h2
 .cover
 {
 	width:  100%;
-	min-height: calc(100vw * 9/16);
+	min-height: calc(100vw * 9/16 - 11px);
 	background-image: url('../img/cover.png');
 }
 

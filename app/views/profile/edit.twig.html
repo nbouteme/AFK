@@ -1,6 +1,6 @@
 {% extends "base.twig.html" %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Modification{% endblock %}
 
 {% block head %}
 	<link href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
@@ -15,19 +15,21 @@
 			<form method="post" action="/profile/{{name}}/edit" enctype="multipart/form-data">
 				<h4>Dites-nous en plus sur vous, {{ name }}!</h4>
 				  <div class="form-group">
-					  <textarea name="desc" class="form-control input-sm chat-input" placeholder="Décrivez-vous en quelques mots"></textarea>
+					  <textarea name="desc" class="form-control input-sm chat-input" placeholder="Décrivez-vous en quelques mots">{{ userData }}</textarea>
 				  </div>
 				  <div class="form-group">
-					  <label for="bpic">Image de profil</label>
-					  <input name="ppic" type="file" class="form-control input-sm" />
+					  <label for="prolab">Image de profil:</label>
+					  <label id="prolab" class="btn btn-default" for="ppic">
+						  Choisir une image de profil
+						  <input id="ppic" name="ppic" type="file" class="form-control input-sm"  onchange="document.getElementById('prolab').childNodes[0].nodeValue = this.value;"/>
+					  </label>
 				  </div>
 				  <div class="form-group">
-					  <label for="bpic">Bannière</label>
-					  <input id="bpic" name="bpic" type="file" class="form-control input-sm" />
-				  </div>
-				  <div class="form-group">
-					  <label for="bpic">Bannière</label>
-					  <input name="bpic" type="file" class="form-control input-sm" />
+					  <label for="prolab">Bannière:</label>
+					  <label id="banlab" class="btn btn-default" for="bpic">
+						  Choisir une image de bannière
+						  <input id="bpic" name="bpic" type="file" class="form-control input-sm"  onchange="document.getElementById('banlab').childNodes[0].nodeValue = this.value;"/>
+					  </label>
 				  </div>
 				<div class="wrapper">
 					<span class="group-btn">     

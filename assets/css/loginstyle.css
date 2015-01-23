@@ -322,3 +322,13 @@ nav:hover .nav__header .logo__wrap
 {
 	margin-top: 15%;
 }
+
+label > input[type=file]
+{
+	display: none;
+}
+
+.event-form
+{
+	color: #111;
+}

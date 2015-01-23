@@ -19,7 +19,7 @@
 				<a href="/profile/{{ message.user }}"><img class="messpic" alt="" src="/profile/{{ message.user }}/ppic"></a>
 				<div class="text">
 					<i>{{ message.lastsend }} a dit:</i>
-					<p>{{ message.content }}</p>
+					<p>{{ truncate(message.content, 200) }}</p>
 				</div>
 			</div>
 			<div class="clearfix"></div>

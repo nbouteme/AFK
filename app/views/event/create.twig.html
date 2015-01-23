@@ -1,0 +1,62 @@
+{% extends "base.twig.html" %}
+
+{% block title %}{{ title }} un évenement{% endblock %}
+
+{% block head %}
+	<link href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/loginstyle.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
+{% endblock %}
+
+{% block content %}
+	<div class="event-form col-md-6 col-md-offset-3">
+		<h1>{{ title }} un évenement</h1>
+		<form method='post' action='/event/{% if edit %}{{ id }}/edit{% else %}new{% endif %}' role="form" enctype="multipart/form-data">		
+			<div class="form-group">
+			    <input type="text" name="name" placeholder="Nom" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<select id="type" name="type" class="form-control">
+					<option value="1">Convention</option>
+					<option value="2">Rencontre</option>
+					<option value="3">LAN Party</option>
+					<option value="4">Fete</option>
+					<option value="5">Autre</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+			    <input type="text" name="desc" placeholder="Description" class="form-control ">
+			</div>
+
+			<div class="form-group">
+			    <input type="text" name="place" placeholder="Lieu" class="form-control">
+			</div>
+
+			<div class="form-group">
+			    <input type="date" name="date" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="imglab">Image d'évenement:</label>
+				<label id="imglab" class="btn btn-default" for="imgform">
+					Choisir une image d'évenement
+					<input id="imgform" name="imgform" type="file" class="form-control input-sm"  onchange="document.getElementById('imglab').childNodes[0].nodeValue = this.value;"/>
+				</label>
+			</div>
+
+			<div class="form-group">
+				<label for="banlab">Bannière d'évenement:</label>
+				<label id="banlab" class="btn btn-default" for="banform">
+					Choisir une bannière d'évenement
+					<input id="banform" name="banform" type="file" class="form-control input-sm"  onchange="document.getElementById('banlab').childNodes[0].nodeValue = this.value;"/>
+				</label>
+			</div>
+
+			<div class="form-group">
+			    <input type="submit" value="{{ title }}" class="col-sm-offset-8 col-xs-4 btn btn-primary btn-md">
+			</div>
+		</form>
+{% endblock %}

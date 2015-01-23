@@ -8,6 +8,8 @@ class ProfileController
         $data = array();
         $data['name'] = $user;
         $data['userdesc'] = Users::getDescription($user);
+        $data['partEvents'] = Event::eventParticipating($user);
+        $data['orgEvents'] = Event::eventOrganizing($user);
         // A completer
         View::render('profile/user', $data);
     }

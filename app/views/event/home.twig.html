@@ -1,0 +1,64 @@
+{% extends "base.twig.html" %}
+
+{% block title %}{{ nom }}{% endblock %}
+
+{% block head %}
+	{{ parent() }}
+	<link rel="stylesheet" href="/assets/css/eventstyle.css">
+	<link rel="stylesheet" href="/event/{{ eventId }}/style">
+{% endblock %}
+
+{% block content %}
+		<div class="user-cover">
+			<div class="user-info">
+				<div class="user-image event-image">
+				</div>
+				<div class="user-name-box">
+					<h1>{{ nom }}
+						{% if loggedIn() and loggedUser() is same as(eventOwner(eventId)) %}
+							<a href="/event/{{ eventId }}/edit" class="pull-right"><i class="fa fa-edit"></i></a>
+						{% endif %}
+					</h1>
+					<div class="desc">
+						<h2>À {{ lieu }}, le {{ date }}</h2>
+						{{ desc }}
+					</div>
+				</div>
+				<div class="user-actions">
+					{% if (loggedIn()) and (not loggedUser() is same as(eventOwner(eventId)))%}
+						{% if hasSignedUpFor(eventId) %}
+							<div class="user-action">
+								<a href="/event/{{ eventId }}/unsubscribe"><i class="fa fa-minus-square-o"></i>Se désinscrire</a>
+							</div><br/>
+						{% else %}
+							<div class="user-action">
+								<a href="/event/{{ eventId }}/subscribe"><i class="fa fa-plus-square-o"></i>S'inscrire</a>
+							</div>
+						{% endif %}
+					{% else %}
+						<div class="user-action">
+							<a href="/event/{{ eventId }}/delete"><i class="fa fa-exclamation-triangle"></i>Supprimer cet évenement</a>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-xs-3 afk-col">
+			<h1 class="h3 col-md-12 col-xs-12">Organisé par</h1>
+			<div class="user-info-box col-md-12 col-xs-12">
+				<a href="/profile/{{ eventOwner(eventId) }}"><img alt="" src="/profile/{{ eventOwner(eventId) }}/ppic"></a>
+				<p>{{eventOwner(eventId)}}</p>
+			</div>
+		</div>
+
+		<div class="col-md-7 col-xs-7 afk-col">
+			<h1 class="h3 col-md-12 col-xs-12">Participants</h1>
+			{% for p in participants %}
+				<div class="user-info-box col-md-3 col-xs-6">
+					<a href="/profile/{{ p }}"><img alt="" src="/profile/{{ p }}/ppic"></a>
+					<p>{{ p }}</p>
+				</div>
+			{% endfor %}
+		</div>
+{% endblock %}
+

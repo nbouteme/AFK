@@ -20,7 +20,7 @@ class Router
         self::$routes[$method][] = $route;
     }
 
-    // Cette fonction genere une expression reguliere qui permet de reconnaitre les URL de la meme forme (/user/abc et /user/def ont une regex identique, qui permetra d'utiliser pour les 2 le model d'utilisateur)
+    // Cette fonction genere une expression reguliere qui permet de reconnaitre les URL de la meme forme (/user/abc et /user/def ont une regex identique, qui permetra d'utiliser pour les 2 le controller d'utilisateur)
     static private function parseUrl($uri)
     {
         $parts = explode('/', $uri);

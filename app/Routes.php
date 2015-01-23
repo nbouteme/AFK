@@ -1,7 +1,7 @@
 <?php
-Router::register('GET', ['url'        => '/'                     ,
-                         'controller' => 'MainController'        ,
-                         'action'     => 'home']);
+Router::register('GET', ['url'         => '/'                       ,
+                         'controller'  => 'MainController'          ,
+                         'action'      => 'home']);
 
 ////////////////////////////////////////////////////
 //        _   _ _ _           _                   //
@@ -11,21 +11,21 @@ Router::register('GET', ['url'        => '/'                     ,
 //  \__,_|\__|_|_|_|___/\__,_|\__\___|\__,_|_|    //
 ////////////////////////////////////////////////////
 
-Router::register('POST', ['url'       => '/register'             ,
-                         'controller' => 'UserController'        ,
-                         'action'     => 'store']);
-Router::register('GET', ['url'        => '/register'             ,
-                         'controller' => 'UserController'        ,
-                         'action'     => 'register']);
-Router::register('GET', ['url'        => '/login'                ,
-                         'controller' => 'UserController'        ,
-                         'action'     => 'login']);
-Router::register('POST', ['url'       => '/login'                ,
-                         'controller' => 'UserController'        ,
-                         'action'     => 'checkLogin']);
-Router::register('GET', ['url'        => '/logout'               ,
-                         'controller' => 'UserController'        ,
-                         'action'     => 'logout']);
+Router::register('POST', ['url'        => '/register'               ,
+                         'controller'  => 'UserController'          ,
+                         'action'      => 'store']);
+Router::register('GET', ['url'         => '/register'               ,
+                         'controller'  => 'UserController'          ,
+                         'action'      => 'register']);
+Router::register('GET', ['url'         => '/login'                  ,
+                         'controller'  => 'UserController'          ,
+                         'action'      => 'login']);
+Router::register('POST', ['url'        => '/login'                  ,
+                         'controller'  => 'UserController'          ,
+                         'action'      => 'checkLogin']);
+Router::register('GET', ['url'         => '/logout'                 ,
+                         'controller'  => 'UserController'          ,
+                         'action'      => 'logout']);
 
 ///////////////////////////////////
 //                   __ _ _      //
@@ -36,27 +36,27 @@ Router::register('GET', ['url'        => '/logout'               ,
 // |_|                           //
 ///////////////////////////////////
 
-Router::register('GET', ['url'        => '/profile/{user}'       ,
-                         'controller' => 'ProfileController'     ,
-                         'action'     => 'profile']);
-Router::register('GET', ['url'        => '/profile/{user}/edit'  ,
-                         'controller' => 'ProfileController'     ,
-                         'action'     => 'showEdit']);
-Router::register('POST', ['url'       => '/profile/{user}/edit'  ,
-                          'controller' => 'ProfileController'    ,
+Router::register('GET', ['url'         => '/profile/{user}'         ,
+                         'controller'  => 'ProfileController'       ,
+                         'action'      => 'profile']);
+Router::register('GET', ['url'         => '/profile/{user}/edit'    ,
+                         'controller'  => 'ProfileController'       ,
+                         'action'      => 'showEdit']);
+Router::register('POST', ['url'        => '/profile/{id}/edit'    ,
+                          'controller' => 'ProfileController'       ,
                           'action'     => 'saveEdit']);
-Router::register('GET', ['url'        => '/profile/{user}/ppic'  ,
-                         'controller' => 'ProfileController'     ,
-                         'action'     => 'getPpicture']);
-Router::register('GET', ['url'        => '/profile/{user}/bpic'  ,
-                         'controller' => 'ProfileController'     ,
-                         'action'     => 'getBpicture']);
-Router::register('GET', ['url'        => '/profile/{user}/style' ,
-                         'controller' => 'ProfileController'     ,
-                         'action'     => 'generateStyle']);
-Router::register('GET', ['url'        => '/self/ppic'            ,
-                         'controller' => 'ProfileController'     ,
-                         'action'     => 'getSelfPpicture']);
+Router::register('GET', ['url'         => '/profile/{user}/ppic'    ,
+                         'controller'  => 'ProfileController'       ,
+                         'action'      => 'getPpicture']);
+Router::register('GET', ['url'         => '/profile/{user}/bpic'    ,
+                         'controller'  => 'ProfileController'       ,
+                         'action'      => 'getBpicture']);
+Router::register('GET', ['url'         => '/profile/{user}/style'   ,
+                         'controller'  => 'ProfileController'       ,
+                         'action'      => 'generateStyle']);
+Router::register('GET', ['url'         => '/self/ppic'              ,
+                         'controller'  => 'ProfileController'       ,
+                         'action'      => 'getSelfPpicture']);
 
 /////////////////////////////////////////////////////
 //  _ __ ___   ___  ___ ___  __ _  __ _  ___  ___  //
@@ -66,15 +66,15 @@ Router::register('GET', ['url'        => '/self/ppic'            ,
 //                                |___/            //
 /////////////////////////////////////////////////////
 
-Router::register('GET', ['url'        => '/message'              ,
-                         'controller' => 'MessageController'     ,
-                         'action'     => 'home']);
-Router::register('GET', ['url'        => '/message/{user}'       ,
-                         'controller' => 'MessageController'     ,
-                         'action'     => 'showMessagesof']);
-Router::register('POST', ['url'       => '/message/{user}'       ,
-                         'controller' => 'MessageController'     ,
-                         'action'     => 'sendMessage']);
+Router::register('GET', ['url'         => '/message'                ,
+                         'controller'  => 'MessageController'       ,
+                         'action'      => 'home']);
+Router::register('GET', ['url'         => '/message/{user}'         ,
+                         'controller'  => 'MessageController'       ,
+                         'action'      => 'showMessagesof']);
+Router::register('POST', ['url'        => '/message/{user}'         ,
+                         'controller'  => 'MessageController'       ,
+                         'action'      => 'sendMessage']);
 
 ////////////////////////////////////
 //                       _        //
@@ -84,15 +84,39 @@ Router::register('POST', ['url'       => '/message/{user}'       ,
 //  \___| \_/ \___|_| |_|\__|___/ //
 ////////////////////////////////////
 
-Router::register('GET', ['url'        => '/event/new'            ,
-                         'controller' => 'EventController'       ,
-                         'action'     => 'showCreate']);
-Router::register('POST', ['url'       => '/event/new'           ,
-                         'controller' => 'EventController'       ,
-                         'action'     => 'createEvent']);
-Router::register('POST', ['url'       => '/event/new'           ,
-                         'controller' => 'EventController'       ,
-                         'action'     => 'createEvent']);
+Router::register('GET', ['url'         => '/event/new'              ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'showCreate']);
+Router::register('POST', ['url'        => '/event/new'              ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'createEvent']);
+
+Router::register('GET', ['url'         => '/event/{id}'             ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'showEvent']);
+Router::register('GET', ['url'         => '/event/{id}/edit'        ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'showEdit']);
+Router::register('POST', ['url'        => '/event/{id}/edit'        ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'saveEdit']);
+
+Router::register('GET', ['url'         => '/event/{id}/subscribe'   ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'subscribe']);
+Router::register('GET', ['url'         => '/event/{id}/unsubscribe' ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'unsubscribe']);
+
+Router::register('GET', ['url'         => '/event/{id}/ppic'        ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'getPpicture']);
+Router::register('GET', ['url'         => '/event/{id}/bpic'    ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'getBpicture']);
+Router::register('GET', ['url'         => '/event/{id}/style'   ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'generateStyle']);
 
 ////////////////////////////////////////
 //  _       _                _        //
@@ -102,21 +126,21 @@ Router::register('POST', ['url'       => '/event/new'           ,
 // |_|_| |_|\__\___|_|  \___|\__|___/ //
 ////////////////////////////////////////
 
-Router::register('GET', ['url'        => '/interest/new'         ,
-                         'controller' => 'InterestController'    ,
-                         'action'     => 'showNew']);
+Router::register('GET', ['url'         => '/interest/new'           ,
+                         'controller'  => 'InterestController'      ,
+                         'action'      => 'showNew']);
 
-Router::register('POST', ['url'       => '/interest/add'         ,
-                         'controller' => 'InterestController'    ,
-                         'action'     => 'createInterest']);
+Router::register('POST', ['url'        => '/interest/add'           ,
+                         'controller'  => 'InterestController'      ,
+                         'action'      => 'createInterest']);
 
-Router::register('GET', ['url'        => '/interest/{user}.json' ,
-                         'controller' => 'InterestController'    ,
-                         'action'     => 'getInterestForUser']);
+Router::register('GET', ['url'         => '/interest/{user}.json'   ,
+                         'controller'  => 'InterestController'      ,
+                         'action'      => 'getInterestForUser']);
 
-Router::register('GET', ['url'        => '/interest.json'        ,
-                         'controller' => 'InterestController'    ,
-                         'action'     => 'getInterest']);
+Router::register('GET', ['url'         => '/interest.json'          ,
+                         'controller'  => 'InterestController'      ,
+                         'action'      => 'getInterest']);
 
 /////////////////////////////////////
 //            _           _        //
@@ -126,8 +150,8 @@ Router::register('GET', ['url'        => '/interest.json'        ,
 //  \__,_|\__,_|_| |_| |_|_|_| |_| //
 /////////////////////////////////////
 
-Router::register('GET', ['url'        => '/admin'                ,
-                         'controller' => 'EventController'       ,
-                         'action'     => 'createEvent']);
+Router::register('GET', ['url'         => '/admin'                  ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'createEvent']);
 
 ?>

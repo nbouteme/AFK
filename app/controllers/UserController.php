@@ -5,6 +5,9 @@ class UserController
     // Affiche la page de login
     public function login()
     {
+        if(isset($_SESSION['user']))
+            Url::redirectTo('/profile/' . $_SESSION['user']);
+
         View::render('profile/login');
     }
 

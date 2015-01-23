@@ -22,6 +22,8 @@ class Users
     {
         if(filter_var($id, FILTER_VALIDATE_EMAIL))
             return Database::$PDO->prepare("SELECT $attribute FROM USERS WHERE EMAIL = ?");
+        else if(filter_var($id, FILTER_VALIDATE_INT))
+            return Database::$PDO->prepare("SELECT $attribute FROM USERS WHERE ID = ?");            
         else
             return Database::$PDO->prepare("SELECT $attribute FROM USERS WHERE PSEUDO = ?");
     }
@@ -89,10 +91,10 @@ class Users
         $xmlStr ->asXML($fn);
     }
 
-    public static function idOf($user)
+    public static function idOf($id)
     {
         $query = self::getQueryAttribute($id, 'ID');
-        $query->execute([$user]);
+        $query->execute([$id]);
         return $query->fetch()['ID'];
     }
     

@@ -30,6 +30,25 @@ class View
             return $_SESSION['user'];
         });
 
+        $functions[] = new Twig_SimpleFunction('truncate', function($str, $n, $ellipse = '...')
+        {
+            if(strlen($str) > $n)
+                return substr($str, 0, $n) . $ellipse;
+            return $str;
+        });
+
+        $functions[] = new Twig_SimpleFunction('eventOwner', function($id)
+        {
+            Database::connect();
+            return Event::getProp($id);
+        });
+        
+        $functions[] = new Twig_SimpleFunction('hasSignedUpFor', function($id)
+        {
+            Database::connect();
+            return Event::hasSubscribedFor($_SESSION['user'], $id);
+        });
+
         foreach($functions as $f)
         self::$twig->addFunction($f);
     }
