@@ -11,10 +11,8 @@ class App
         require_once 'app/core/Database.php';
         require_once 'app/core/Auth.php';
         require_once 'app/core/Config.php';
-
         if(substr($_SERVER['REQUEST_URI'], -1) === '/' && strlen($_SERVER['REQUEST_URI']) > 1)
             Url::redirectTo(substr($_SERVER['REQUEST_URI'], 0, -1));
-
         session_start();
         spl_autoload_register(
             function($class)

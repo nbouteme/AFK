@@ -179,3 +179,56 @@ nav:hover .nav__header .logo__wrap
         line-height: 4.5;
         color: white;
 }
+
+body
+{
+	background-image: url('../img/ppat.png');
+}
+
+.message
+{
+	margin-top: 3em;
+	border: 1px #ccc solid;
+	background-color: #eee;
+	border-radius: 2px;
+	box-shadow: 0 5px 12px -10px black;
+}
+
+.unread
+{
+	box-shadow: 0 5px 12px #D5CBFF;
+}
+
+.message-box
+{
+	margin: 16px;
+	display: inline-flex;
+}
+
+.message-box a
+{
+	min-width: 64px;
+}
+
+.message-box img
+{
+	width: 64px;
+	height: 64px;
+	border-radius: 64px;
+	box-shadow: 0 0 12px -4px black;
+}
+
+.message p
+{
+	margin-left: 16px;
+}
+
+.reply
+{
+	float: right;
+}
+
+.text
+{
+	margin-left: 16px;
+}

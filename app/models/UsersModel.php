@@ -67,16 +67,42 @@ class Users
     public static function saveDesc($id, $data)
     {
         extract($data);
-        $xmlStr = new SimpleXMLElement('<xml/>');
-        $xmlStr->addChild('desc', $desc);
+
         $query = self::getQueryAttribute($id, 'PSEUDO');
         $query->execute([$id]);
         if($query->columnCount() !== 1)
             die('Couldn\'t find description in database');
         $username = $query->fetch()['PSEUDO'];
 
+        if(file_exists('app/cache/user-' .  md5($username) . '.xml'))
+        {
+            $xmlStr = simplexml_load_file('app/cache/user-' .  md5($username) . '.xml');
+            $xmlStr->desc = $desc;
+        }
+        else
+        {
+            $xmlStr = new SimpleXMLElement('<xml/>');
+            $xmlStr->addChild('desc', $desc);
+        }
+        
         $fn = 'app/cache/user-' .  md5($username) . '.xml';
         $xmlStr ->asXML($fn);
     }
 
+    public static function idOf($user)
+    {
+        $query = self::getQueryAttribute($id, 'ID');
+        $query->execute([$user]);
+        return $query->fetch()['ID'];
+    }
+    
+    public static function isFriendOf($a, $b)
+    {
+        $query =  Database::$PDO->prepare("SELECT * FROM LISTAMIS WHERE IDA = ? AND IDB = ?");
+        $query->execute([self::idOf($a), self::idOf($b)]);
+        return $query->columnCount() === 1;        
+    }
 }
+
+
+

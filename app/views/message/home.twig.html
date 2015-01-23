@@ -1,0 +1,31 @@
+{%  extends "base.twig.html" %}
+
+{% block title %}Messages{% endblock %}
+
+{% block head %}
+	{{ parent() }}
+	<link rel="stylesheet" href="/assets/css/messagestyle.css">
+	<link rel="stylesheet" href="/profile/{{ name }}/style">
+{% endblock %}
+
+{% block content %}
+
+	<h1 class="h1 col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2"> Conversations</h1>
+	
+	{% for message in lasts %}
+
+		<div class="message unread col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 ">
+			<div class="message-box">
+				<a href="/profile/{{ message.user }}"><img class="messpic" alt="" src="/profile/{{ message.user }}/ppic"></a>
+				<div class="text">
+					<i>{{ message.lastsend }} a dit:</i>
+					<p>{{ message.content }}</p>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<a href="/message/{{ message.user }}" class="reply"><i class="fa fa-mail-reply"></i></a>
+		</div>
+
+	{% endfor %}
+
+{% endblock %}

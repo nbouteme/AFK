@@ -1,0 +1,41 @@
+{%  extends "base.twig.html" %}
+
+{% block title %}Messages{% endblock %}
+
+{% block head %}
+	{{ parent() }}
+	<link rel="stylesheet" href="/assets/css/messagestyle.css">
+	<link rel="stylesheet" href="/profile/{{ name }}/style">
+{% endblock %}
+
+{% block content %}
+	<form method="post" action="/message/{{ name }}">
+		<h1 class="h1 col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">Dire quelque chose à {{ name }}</h1>
+		<div class="row col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+			<div class="form-group">
+				<div class="col-md-10 col-xs-10">
+					<input id="textinput" name="content" type="text" placeholder="" class="form-control input-md" required="">
+				</div>
+				<div class="col-md-2 col-xs-2">
+ 					<button id="singlebutton" name="singlebutton" class="btn btn-default">Envoyer</button>
+				</div>
+			</div>
+		</div>
+	</form>
+
+	{% for message in messages %}
+	
+	<div class="message unread col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 ">
+		<div class="message-box">
+			<a href="/profile/{{ message.from }}"><img class="messpic" alt="" src="/profile/{{ message.from }}/ppic"></a>
+			<div class="text">
+				<i>{{  message.from }} a dit:</i>
+				<p>{{ message.content }}</p>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	{% endfor %}
+
+{% endblock %}

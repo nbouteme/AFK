@@ -25,6 +25,8 @@
 				{% if loggedIn() %}
 					<a href="{{ url('/profile/' ~ loggedUser()) }}"><i class="fa fa-user"></i>
 						<span>Profil</span></a>
+					<a href="{{ url('/message') }}"><i class="fa fa-comment"></i>
+						<span>Messages</span></a>
 				{% else %}
 						<a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i>
 							<span>Connexion</span></a>
