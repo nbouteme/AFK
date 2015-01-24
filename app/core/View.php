@@ -49,6 +49,12 @@ class View
             return Event::hasSubscribedFor($_SESSION['user'], $id);
         });
 
+        $functions[] = new Twig_SimpleFunction('friendOf', function($name)
+        {
+            Database::connect();
+            return Friend::isFriendOf($_SESSION['user'], $name);
+        });
+
         foreach($functions as $f)
         self::$twig->addFunction($f);
     }

@@ -170,4 +170,18 @@ Router::register('GET', ['url'         => '/search'                  ,
 Router::register('POST', ['url'         => '/search'                  ,
                          'controller'  => 'SearchController'         ,
                          'action'      => 'search']);
+
+///////////////////////////////////////
+//   __      _                _      //
+//  / _|_ __(_) ___ _ __   __| |___  //
+// | |_| '__| |/ _ \ '_ \ / _` / __| //
+// |  _| |  | |  __/ | | | (_| \__ \ //
+// |_| |_|  |_|\___|_| |_|\__,_|___/ //
+///////////////////////////////////////
+                                 
+Router::register('GET', ['url'         => '/addfriend/{name}'                  ,
+                         'controller'  => 'FriendController'         ,
+                         'action'      => 'addFriend']);
+
+
 ?>

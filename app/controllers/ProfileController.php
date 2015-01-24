@@ -5,11 +5,14 @@ class ProfileController
     public function profile($user)
     {
         Database::connect();
+        if(!Users::exists($user))
+            Url::redirectTo('/');            
         $data = array();
         $data['name'] = $user;
         $data['userdesc'] = Users::getDescription($user);
         $data['partEvents'] = Event::eventParticipating($user);
         $data['orgEvents'] = Event::eventOrganizing($user);
+        $data['friends'] = Friend::getFriendsOf($user);
         // A completer
         View::render('profile/user', $data);
     }

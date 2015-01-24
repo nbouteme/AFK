@@ -46,7 +46,7 @@ class Users
 	{
         $query = self::getQueryAttribute($id, 'COUNT(*)');
 		$query->execute([$id]);
-        return $query->columnCount() === 1;
+        return $query->fetch(PDO::FETCH_NUM)[0] != 0;
 	}
 
     public static function getDescription($id)
