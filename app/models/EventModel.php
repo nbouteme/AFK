@@ -124,8 +124,24 @@ class Event
 		$query = Database::$PDO->prepare('SELECT IDEVENT FROM EVENT WHERE ORGANISATEUR = ?');
         $query->execute([Users::idOf($user)]);
         $res = $query->fetchAll();
+        $data = array();
         foreach($res as $row)
             $data[] = self::getData($row['IDEVENT']);
+        return $data;
+    }
+
+    public static function allStartingWith($prefix)
+    {
+        $data = array();
+        $query =  Database::$PDO->prepare("SELECT IDEVENT FROM EVENT");
+        $query->execute();
+        foreach($query->fetchAll() as $row)
+        {
+            $name = self::getData($row['IDEVENT'])['nom'];
+            if(substr($name, 0, strlen($prefix)) == $prefix)
+                $data[$name] = $row['IDEVENT'];
+        }
+        asort($data);
         return $data;
     }
 }

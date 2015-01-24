@@ -1,0 +1,62 @@
+{% extends "base.twig.html" %}
+
+{% block title %}Chercher{% endblock %}
+{% block head %}
+	{{ parent() }}
+	<link rel="stylesheet" href="/assets/css/searchstyle.css">
+{% endblock %}
+
+{% block content %}
+	<div class="search-box">
+		<form action="/search" method="post">
+			<div class="row">
+				<div class="form-group col-md-8 col-xs-5">
+					<input type="search" name="term" class="form-control input-md">
+				</div>
+				<div class="form-group col-md-2 col-xs-4">
+					<select id="type" name="type" class="form-control">
+						<option value="0">Choisir un type</option>
+						<option value="1">Utilisateurs</option>
+						<option value="2">Évenements</option>
+						<option value="3">Intérets</option>
+					</select>
+				</div>
+				<div class="form-group col-md-2 col-xs-2">
+					<button id="send" class="input-md btn btn-default">Chercher</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="container">
+
+		{% if not results.users is empty %}
+			<h3 class="h3 col-md-12">Utilisateurs</h3>
+
+			{% for result in results.users %}
+				<div class="col-md-3 col-xs-3">
+					<div class="result-box">
+						<a href="{{ result.link }}"><img class="respic" alt="" src="{{ result.pic }}"></a>
+						<p>{{ result.title }}</p>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+
+		{% if not results.events is empty %}
+			<h3 class="h3 col-md-12">Évenements</h3>
+
+			{% for result in results.events %}
+				<div class="col-md-3 col-xs-3">
+					<div class="result-box">
+						<a href="{{ result.link }}"><img class="respic" alt="" src="{{ result.pic }}"></a>
+						<p>{{ result.title }}</p>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			{% endfor %}
+		{% endif %}
+
+	</div>
+{% endblock %}

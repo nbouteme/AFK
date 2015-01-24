@@ -104,6 +104,16 @@ class Users
         $query->execute([self::idOf($a), self::idOf($b)]);
         return $query->columnCount() === 1;        
     }
+
+    public static function allStartingWith($prefix)
+    {
+        $data = array();
+        $query =  Database::$PDO->prepare("SELECT * FROM USERS WHERE PSEUDO LIKE ? ORDER BY PSEUDO");
+        $query->execute([$prefix . '%']);
+        foreach($query->fetchAll() as $row)
+            $data[] = array('id' => $row['ID'], 'name' => $row['PSEUDO']);
+        return $data;
+    }
 }
 
 

@@ -154,4 +154,20 @@ Router::register('GET', ['url'         => '/admin'                  ,
                          'controller'  => 'EventController'         ,
                          'action'      => 'createEvent']);
 
+
+/////////////////////////////////////
+//                          _      //
+//  ___  ___  __ _ _ __ ___| |__   //
+// / __|/ _ \/ _` | '__/ __| '_ \  //
+// \__ \  __/ (_| | | | (__| | | | //
+// |___/\___|\__,_|_|  \___|_| |_| //
+/////////////////////////////////////
+                               
+
+Router::register('GET', ['url'         => '/search'                  ,
+                         'controller'  => 'SearchController'         ,
+                         'action'      => 'showSearch']);
+Router::register('POST', ['url'         => '/search'                  ,
+                         'controller'  => 'SearchController'         ,
+                         'action'      => 'search']);
 ?>

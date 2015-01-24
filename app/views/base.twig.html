@@ -31,7 +31,8 @@
 						<a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i>
 							<span>Connexion</span></a>
 				{% endif %}
-
+					<a href="{{ url('/search') }}"><i class="fa fa-search"></i>
+						<span>Rechercher</span></a>
 				{% if loggedIn() %}
 					<a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i>
 						<span>Déconnexion</span></a>
