@@ -18,28 +18,28 @@ Indentation :
 		- Une ligne vide doit suivre une ou plusieurs déclarations succesives.  
 	
 Technologies minimum à implémenter:
-- [ ] PHP
-- [ ] MySQL
+- [X] PHP
+- [X] MySQL
 - [ ] XML
-- [ ] HTML 
-- [ ] CSS	
+- [X] HTML 
+- [X] CSS	
 
 
 Autres critères de notation importants :
 
-- [ ] Programmation orienté objet 
-- [ ] Utilisation du modèle MVC et/ou Modèles de conceptions 
-- [ ] Evolutive,Modulaire,Robuste,Fiable,Fonctionnelle
+- [X] Programmation orienté objet 
+- [X] Utilisation du modèle MVC et/ou Modèles de conceptions 
+- [X] Evolutive,Modulaire,Robuste,Fiable,Fonctionnelle
 
 ## Liste des fonctionalitées minimales attendues ##
 
 Points minimum :
-- [ ] Un menu doit être présent sur toutes les pages web
+- [X] Un menu doit être présent sur toutes les pages web
 
-- [ ] Page d'accueil
+- [X] Page d'accueil
  
-	- [ ] Présentation du site 
-	- [ ] Formulaire Authentification
+	- [X] Présentation du site 
+	- [X] Formulaire Authentification
 	- [ ] Derniers événements organisés
 	- [ ] Nombres d'inscrits connectés
 	- [ ] Nombre d'événements
@@ -57,27 +57,27 @@ Points minimum :
 
 
 
-- [ ] Un formulaire d'inscription
+- [X] Un formulaire d'inscription
 
-	- [ ] Enregistrement dans la BDD
-	- [ ] Nom
-	- [ ] Prenom
-	- [ ] Civil
-	- [ ] Pseudonyme
-	- [ ] Email
-	- [ ] Mot de passe encodé
-	- [ ] Avatar
-	- [ ] Autre
+	- [X] Enregistrement dans la BDD
+	- [X] Nom
+	- [X] Prenom
+	- [X] Civil
+	- [X] Pseudonyme
+	- [X] Email
+	- [X] Mot de passe encodé
+	- [X] Avatar
+	- [X] Autre
 	- [ ] Email de confirmation
 
 
-- [ ] Un annuaire des inscrits
+- [X] Un annuaire des inscrits
 
 	- [ ] Liste des inscrits par ordre lexicographique des pseudonymes
 	- [ ] Ajouter un bouton d'ajout d'amis
 
 
-- [ ] Une page de profil
+- [X] Une page de profil
 
 	- [ ] Afficher les informations personnelles (publique)
 	- [ ] Ses évènements (Organisateur/Inscrit)
@@ -88,13 +88,13 @@ Points minimum :
 	- [ ] Accéder à l'ensemble de nos amis
 	- [ ] Supprimer un de ses amis.
 
-- [ ] Une messagerie personnelle
+- [X] Une messagerie personnelle
 
 	- [ ] Visionner ses messages par ordre antéchronologique, en 
 	distinguant s’ils sont lus ou non
 	- [ ] Les messages ne doivent pas être stocké en BDD
-	- [ ] Envoyer des messages aux autres inscrits ami ou non
-	- [ ] Voir les messages précédemment envoyé
+	- [X] Envoyer des messages aux autres inscrits ami ou non
+	- [X] Voir les messages précédemment envoyé
 
 
 - [ ] Un agenda personnel avec calendrier pour chaque inscrit
@@ -104,7 +104,7 @@ Points minimum :
 
 
 - [ ] Une page de lien vers des sites partenaires
-- [ ] Pour une longue liste, il faut une pagination complète 
+- [X] Pour une longue liste, il faut une pagination complète 
 - [ ] Pour les grandes pages, ancrage permettant de remonter.
 - [ ] Balise meta/description/keyword renseigné pour chaque page web
 - [ ] Un favicon sur toutes les pages un favicon (contenant  plusieurs images de différent formats pour un affichage optimal en 
