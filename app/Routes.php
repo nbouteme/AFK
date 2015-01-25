@@ -26,6 +26,12 @@ Router::register('POST', ['url'        => '/login'                  ,
 Router::register('GET', ['url'         => '/logout'                 ,
                          'controller'  => 'UserController'          ,
                          'action'      => 'logout']);
+Router::register('GET', ['url'         => '/validate'               ,
+                         'controller'  => 'UserController'          ,
+                         'action'      => 'showvalid']);
+Router::register('GET', ['url'         => '/validate/{user}/{code}' ,
+                         'controller'  => 'UserController'          ,
+                         'action'      => 'validUser']);
 
 ///////////////////////////////////
 //                   __ _ _      //

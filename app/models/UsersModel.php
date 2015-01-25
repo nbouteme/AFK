@@ -45,6 +45,13 @@ class Users
         return $query->fetch()['PSEUDO'];
     }
 
+    public static function getEmail($id)
+    {
+        $query = self::getQueryAttribute($id, 'EMAIL');
+		$query->execute([$id]);
+        return $query->fetch()['EMAIL'];
+    }
+
 	public static function exists($id)
 	{
         $query = self::getQueryAttribute($id, 'COUNT(*)');
@@ -242,9 +249,18 @@ class Users
         return $data;
     }
 
+    public static function isvalid($id)
+    {
+        if(!self::exists($id)) return false;
+        $user = self::getUserName($id);
+        $query =  Database::$PDO->prepare("SELECT * FROM USERS WHERE PSEUDO = ?");
+        $query->execute([$user]);
+        return $query->fetch()['VALID'];
+    }
+
     public static function valid($id)
     {
-        if(!self::exists) return false;
+        if(!self::exists($id)) return false;
         $user = self::getUserName($id);
         $query =  Database::$PDO->prepare("SELECT * FROM USERS WHERE VALID = 0 AND PSEUDO = ?");
         $query->execute([$user]);
@@ -259,8 +275,10 @@ class Users
         $user = getUserName($email);
         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
         $headers .= 'X-insult: weeb' . "\r\n";
-        $message = 'Bienvenue sur AFK! Valide ton compte en cliquant sur ce lien: <a>';
-        $message .= 'http://' . Config::get('App.Host') . "/valid/$user/" . md5($email . 'il etait un un un un petit navire qui n\'avait ja ja jamais navigué qui n\'avais ja ja jamais navigué hoé hoé');
+        $headers .= "From: Kuriyama Mirai <mirai@kuriyama.moe>";
+        $message  = 'Bienvenue sur AFK! Valide ton compte en cliquant sur ce lien: <a>';
+        $message .= 'http://' . Config::get('App.Host') . "/valid/$user/" . md5($email . 'il etait un un un un petit navire qui n\'avait ja ja jamais navigué qui n\'avais ja ja jamais navigué hoé hoé') . '</a>';
+
         mail($email, 'AFK he youkoso', $message, $headers);
     }
 

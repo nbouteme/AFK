@@ -15,7 +15,11 @@ class UserController
                 $data['emessage'] = $_SESSION['emessage'];
                 $_SESSION['error']['errored'] = false;
         }
-
+        if(isset($_SESSION['message']))
+        {
+            $data['message'] = $_SESSION['message'];
+            unset($_SESSION['message']);
+        }
         View::render('profile/login', $data);
     }
 
@@ -104,8 +108,31 @@ class UserController
 
         Users::create($data);
         Users::sendValidation($data['email']);
-        if(Auth::validate($_POST['pseudo'], $_POST['password']))
-            Url::redirectTo('/profile/' . $_SESSION['user'] . '/edit');
+        Url::redirectTo('/validate');
+    }
+
+    public function showvalid()
+    {
+        Database::connect();
+        if(Users::isvalid($user)) Url::redirectTo('/login');
+        View::render('validate');
+    }
+
+    public function validUser($user, $code)
+    {
+        Database::connect();
+        if(Users::isvalid($user)) Url::redirectTo('/login');
+
+        $cmp = md5(Users::getEmail($user) . 'il etait un un un un petit navire qui n\'avait ja ja jamais navigué qui n\'avais ja ja jamais navigué hoé hoé');
+        if($code == $cmp)
+        {
+            Users::valid($user);
+            $_SESSION['message'] = 'Compte validé! Vous pouvez maintenant vous connecter';
+            Url::redirectTo('/login');
+        }
+        else
+            $data['message'] = 'Code erroné, veuillez réesayer: ' . $cmp; // C'est pas comme si ca allait marcher.
+        View::render('validate', $data);
     }
 
     public function logout()
