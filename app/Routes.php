@@ -42,7 +42,7 @@ Router::register('GET', ['url'         => '/profile/{user}'         ,
 Router::register('GET', ['url'         => '/profile/{user}/edit'    ,
                          'controller'  => 'ProfileController'       ,
                          'action'      => 'showEdit']);
-Router::register('POST', ['url'        => '/profile/{id}/edit'    ,
+Router::register('POST', ['url'        => '/profile/{id}/edit'      ,
                           'controller' => 'ProfileController'       ,
                           'action'     => 'saveEdit']);
 Router::register('GET', ['url'         => '/profile/{user}/ppic'    ,
@@ -111,10 +111,10 @@ Router::register('GET', ['url'         => '/event/{id}/unsubscribe' ,
 Router::register('GET', ['url'         => '/event/{id}/ppic'        ,
                          'controller'  => 'EventController'         ,
                          'action'      => 'getPpicture']);
-Router::register('GET', ['url'         => '/event/{id}/bpic'    ,
+Router::register('GET', ['url'         => '/event/{id}/bpic'        ,
                          'controller'  => 'EventController'         ,
                          'action'      => 'getBpicture']);
-Router::register('GET', ['url'         => '/event/{id}/style'   ,
+Router::register('GET', ['url'         => '/event/{id}/style'       ,
                          'controller'  => 'EventController'         ,
                          'action'      => 'generateStyle']);
 
@@ -164,11 +164,11 @@ Router::register('GET', ['url'         => '/admin'                  ,
 /////////////////////////////////////
                                
 
-Router::register('GET', ['url'         => '/search'                  ,
-                         'controller'  => 'SearchController'         ,
+Router::register('GET', ['url'         => '/search'                 ,
+                         'controller'  => 'SearchController'        ,
                          'action'      => 'showSearch']);
-Router::register('POST', ['url'         => '/search'                  ,
-                         'controller'  => 'SearchController'         ,
+Router::register('POST', ['url'        => '/search'                 ,
+                         'controller'  => 'SearchController'        ,
                          'action'      => 'search']);
 
 ///////////////////////////////////////
@@ -179,9 +179,21 @@ Router::register('POST', ['url'         => '/search'                  ,
 // |_| |_|  |_|\___|_| |_|\__,_|___/ //
 ///////////////////////////////////////
                                  
-Router::register('GET', ['url'         => '/addfriend/{name}'                  ,
-                         'controller'  => 'FriendController'         ,
+Router::register('GET', ['url'         => '/addfriend/{name}'       ,
+                         'controller'  => 'FriendController'        ,
                          'action'      => 'addFriend']);
+
+Router::register('GET', ['url'         => '/deletefriend/{name}'    ,
+                         'controller'  => 'FriendController'        ,
+                         'action'      => 'removeFriend']);
+
+Router::register('GET', ['url'         => '/home'                   ,
+                         'controller'  => 'NewsController'          ,
+                         'action'      => 'show']);
+
+Router::register('POST', ['url'         => '/home'                   ,
+                         'controller'  => 'NewsController'          ,
+                         'action'      => 'publish']);
 
 
 ?>

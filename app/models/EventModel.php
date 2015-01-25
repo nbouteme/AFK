@@ -94,7 +94,7 @@ class Event
     {
 		$query = Database::$PDO->prepare('SELECT * FROM PARTICIPEVENT WHERE IDEVENT = ? AND IDUSER = ?');
         $query->execute([$eventId, Users::idOf($user)]);
-        return $query->columnCount() == 1;
+        return $query->fetch(PDO::FETCH_NUM)[0] != 0;
     }
 
     public static function usersParticipatingTo($eventId)

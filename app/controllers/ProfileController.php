@@ -9,10 +9,10 @@ class ProfileController
             Url::redirectTo('/');            
         $data = array();
         $data['name'] = $user;
-        $data['userdesc'] = Users::getDescription($user);
+        $data['friends']    = Friend::getFriendsOf($user);
+        $data['userdesc']   = Users::getDescription($user);
+        $data['orgEvents']  = Event::eventOrganizing($user);
         $data['partEvents'] = Event::eventParticipating($user);
-        $data['orgEvents'] = Event::eventOrganizing($user);
-        $data['friends'] = Friend::getFriendsOf($user);
         // A completer
         View::render('profile/user', $data);
     }

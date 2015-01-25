@@ -36,9 +36,12 @@ class EventController
     {
         if(!isset($_SESSION['user']))
             Url::redirectTo('/');
-
         Database::connect();
+        if(Event::hasSubscribedFor($_SESSION['user'], $id))
+            Url::redirectTo('/event' . $id);
+
         Event::subscribe($_SESSION['user'], $id);
+        Users::addActivity(0, $_SESSION['user'], $id);
         Url::redirectTo('/event/' . $id);
     }
 
@@ -96,6 +99,7 @@ class EventController
         Database::connect();
         $id = Event::create($_SESSION['user']);
         $this->saveEdit($id);
+        Users::addActivity(1, $_SESSION['user'], $id);
         Url::redirectTo('/event/' . $id);
     }
 

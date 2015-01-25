@@ -68,25 +68,25 @@
 
 .afk-col
 {
-	margin: 32px;
+	margin: 24px;
 	box-shadow: 0 0 48px -16px black;
 	border-radius: 2px;
 	padding: 0;
 	background-color: #eee;
 }
 
-.user-info-box
+.user-pic
 {
-	display: inline-flex;
+	float: left;
 }
 
-.user-info-box > a
+.user-pic > a
 {
 	min-width: 64px;
 	min-height: 64px;
 }
 
-.user-info-box > a > img
+.user-pic > a > img
 {
 	width: 64px;
 	height: 64px;
@@ -98,4 +98,9 @@
 .user-info-box > p
 {
 	margin-left: 15px;
+}
+
+.user-content p
+{
+	margin-left: 78px;
 }

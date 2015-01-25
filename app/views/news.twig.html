@@ -1,0 +1,65 @@
+{% extends "base.twig.html" %}
+
+{% block title %}Actualités{% endblock %}
+{% block head %}
+	{{ parent() }}
+	<link rel="stylesheet" href="/assets/css/searchstyle.css">
+{% endblock %}
+
+{% block content %}
+	<div class="search-box">
+		<form action="/home" method="post">
+			<div class="row">
+				<div class="form-group col-md-9 col-xs-7">
+					<input type="search" placeholder="Dites ce que vous pensez" name="post" class="form-control input-md">
+				</div>
+				<div class="form-group col-md-1 col-xs-2">
+					<button id="send" class="input-md btn btn-default">Envoyer</button>
+				</div>
+				<div class="dropdown form-group col-md-1 col-xs-2">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+						Nouvel...
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="/event/new">Évenement</a></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="container">
+		<div class="col-md-6">
+			<h3 class="h3 col-md-12 col-xs-12">Actualités</h3>
+			{% if not pubs is empty %}
+				{% for result in pubs %}
+					<div class="col-md-12 col-xs-12">
+						<div class="result-box">
+							<a href="/profile/{{ result.from }}"><img class="respic" alt="" src="/profile/{{ result.from }}/ppic"></a>
+							<i>{{ result.from }}:&nbsp;&nbsp;</i>
+							<p>{{ result.content }}</p>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				{% endfor %}
+			{% endif %}
+		</div>
+		
+		<div class="col-md-6">
+			{% if not acts is empty %}
+				<h3 class="h3 col-md-12 col-xs-12">Dernièrement</h3>
+				{% for result in acts %}
+					<div class="col-md-12 col-xs-12">
+						<div class="result-box">
+							<a href="{{ result.link }}"><img class="respic" alt="" src="{{ result.link }}/ppic"></a>
+							<p>{{ result.from }} {{ result.content }}</p>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				{% endfor %}
+			{% endif %}
+		</div>
+
+	</div>
+{% endblock %}

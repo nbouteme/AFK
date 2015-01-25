@@ -88,7 +88,7 @@ class Users
         }
         
         $fn = 'app/cache/user-' .  md5($username) . '.xml';
-        $xmlStr ->asXML($fn);
+        $xml->asXML($fn);
     }
 
     public static function idOf($id)
@@ -114,7 +114,129 @@ class Users
             $data[] = array('id' => $row['ID'], 'name' => $row['PSEUDO']);
         return $data;
     }
+
+    // 0-9 pour evenement, 10-19 pour amis
+    public static function addActivity($code, $id, $param)
+    {
+        $query = self::getQueryAttribute($id, 'PSEUDO');
+        $query->execute([$id]);
+        if($query->columnCount() !== 1)
+            die('Couldn\'t find description in database');
+        $username = $query->fetch()['PSEUDO'];
+
+        $fn = 'app/cache/user-' .  md5($username) . '.xml';
+        $fd = fopen($fn, 'r');
+        $xmlStr = fread($fd, filesize($fn));
+        fclose($fd);
+        $xml = new SimpleXMLElement($xmlStr);
+
+        $exists = false;
+        foreach ($xml->children() as $ch)
+            if($ch->getName() == 'activities')
+                $exists = true;
+
+        if(!$exists)
+            $activities = $xml->addChild('activities');
+        else
+            $activities = $xml->activities;
+
+        $a = $xml->activities->addChild('activity');
+        $a->addAttribute('type', $code);
+        $a->addAttribute('from', $id);
+        $a->addAttribute('time', time());
+        $a->addAttribute('action', $param);
+        $xml->asXML($fn);
+    }
+
+    public static function getActivities($id)
+    {
+        $query = self::getQueryAttribute($id, 'PSEUDO');
+        $query->execute([$id]);
+        if($query->columnCount() !== 1)
+            die('Couldn\'t find description in database');
+        $username = $query->fetch()['PSEUDO'];
+
+        $fn = 'app/cache/user-' .  md5($username) . '.xml';
+        $fd = fopen($fn, 'r');
+        $xmlStr = fread($fd, filesize($fn));
+        fclose($fd);
+        $xml = new SimpleXMLElement($xmlStr);
+
+        $data = array();
+        $exists = false;
+        foreach ($xml->children() as $ch)
+            if($ch->getName() == 'activities')
+                $exists = true;
+
+        if(!$exists) return array();
+
+        $data[] = array();
+        foreach($xml->activities->activity as $act)
+            $data[] = array('type'   => (string)$act['type'],
+                            'from'   => (string)$act['from'],
+                            'time'   => (string)$act['time'],
+                            'action' => (string)$act['action']);
+        return $data;
+    }
+
+    public static function addPublication($id, $content)
+    {
+        $query = self::getQueryAttribute($id, 'PSEUDO');
+        $query->execute([$id]);
+        if($query->columnCount() !== 1)
+            die('Couldn\'t find description in database');
+        $username = $query->fetch()['PSEUDO'];
+
+        $fn = 'app/cache/user-' .  md5($username) . '.xml';
+        $fd = fopen($fn, 'r');
+        $xmlStr = fread($fd, filesize($fn));
+        fclose($fd);
+        $xml = new SimpleXMLElement($xmlStr);
+
+        $exists = false;
+        foreach ($xml->children() as $ch)
+            if($ch->getName() == 'publications')
+                $exists = true;
+
+        if(!$exists)
+            $publis = $xml->addChild('publications');
+        else
+            $publis = $xml->publications;
+
+
+        $p = $publis->addChild('publication');
+        $p->addAttribute('from', $id);
+        $p->addAttribute('time', time());
+        $p->addChild('content', $content);
+        $xml->asXML($fn);
+    }
+
+    public static function getPublications($id)
+    {
+        $query = self::getQueryAttribute($id, 'PSEUDO');
+        $query->execute([$id]);
+        if($query->columnCount() !== 1)
+            die('Couldn\'t find description in database');
+        $username = $query->fetch()['PSEUDO'];
+
+        $fn = 'app/cache/user-' .  md5($username) . '.xml';
+        $fd = fopen($fn, 'r');
+        $xmlStr = fread($fd, filesize($fn));
+        fclose($fd);
+        $xml = new SimpleXMLElement($xmlStr);
+
+        $data = array();
+        $exists = false;
+        foreach ($xml->children() as $ch)
+            if($ch->getName() == 'publications')
+                $exists = true;
+
+        if(!$exists) return array();
+        foreach($xml->publications->publication as $act)
+            $data[] = array('content' => (string)$act->content,
+                            'from' => (string)$act['from'],
+                            'time' => (string)$act['time']);
+        return $data;
+    }
+
 }
-
-
-

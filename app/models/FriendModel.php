@@ -12,6 +12,13 @@ class Friend
                          Users::idOf($followed),]);
 	}
 
+	public static function stopFriend($follower, $followed)
+	{
+		$query = Database::$PDO->prepare('DELETE * FROM LISTAMIS WHERE IDA = ? AND IDB = ?');
+		$query->execute([Users::idOf($follower),
+                         Users::idOf($followed),]);
+	}
+
     public static function getFriendsOf($user)
     {
         $data = array();
@@ -19,12 +26,14 @@ class Friend
 		$query = Database::$PDO->prepare('SELECT * FROM LISTAMIS WHERE IDB = ?');
 		$query->execute([Users::idOf($user)]);
         
+        $data['followers'] = array();
         foreach($query->fetchAll() as $rows)
             $data['followers'][] = Users::getUserName($rows['IDA']);
 
         $query = Database::$PDO->prepare('SELECT * FROM LISTAMIS WHERE IDA = ?');
 		$query->execute([Users::idOf($user)]);
-        
+
+        $data['followed'] = array();
         foreach($query->fetchAll() as $rows)
             $data['followed'][] = Users::getUserName($rows['IDB']);
         return $data;
@@ -37,5 +46,4 @@ class Friend
                          Users::idOf($followed),]);
         return $query->fetch(PDO::FETCH_NUM)[0] != 0;
 	}
-
 }

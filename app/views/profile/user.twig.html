@@ -42,8 +42,12 @@
 				<h2 class="h3 col-md-12 col-xs-12">Évenements où je participe</h2>
 				{% for p in partEvents %}
 					<div class="user-info-box col-md-6 col-xs-6">
-						<a href="/event/{{ p.id }}"><img alt="" src="/profile/{{ p.id }}/ppic"></a>
-						<p>{{ p.nom }}</p>
+						<div class="user-pic">
+							<a href="/event/{{ p.id }}"><img alt="" src="/profile/{{ p.id }}/ppic"></a>
+						</div>
+						<div class="user-content">
+							<p>{{ p.nom }}</p>
+						</div>
 					</div>
 				{% endfor %}
 			{% endif %}
@@ -51,7 +55,9 @@
 				<h2 class="h3 col-md-12">Évenements que j'organise</h2>
 				{% for p in orgEvents %}
 					<div class="user-info-box col-md-6 col-xs-6">
-						<a href="/event/{{ p.id }}"><img alt="" src="/profile/{{ p.id }}/ppic"></a>
+						<div class="user-pic">
+							<a href="/event/{{ p.id }}"><img alt="" src="/profile/{{ p.id }}/ppic"></a>
+						</div>
 						<p>{{ p.nom }}</p>
 					</div>
 				{% endfor %}
@@ -59,13 +65,20 @@
 		</div>
 	{% endif %}
 	{% if (not friends is empty) %}
-		<div class="afk-col col-md-4 col-xs-4">
+		<div class="afk-col col-md-7 col-xs-7">
 			{% if (not friends.followed is empty) %}
 				<h2 class="h3 col-md-12 col-xs-12">Amis que je suis</h2>
 				{% for fname in friends.followed %}
 					<div class="user-info-box col-md-6 col-xs-6">
-						<a href="/profile/{{ fname }}"><img alt="" src="/profile/{{ fname }}/ppic"></a>
-						<p>{{ fname }}</p>
+						<div class="user-pic">
+							<a href="/profile/{{ fname }}"><img alt="" src="/profile/{{ fname }}/ppic"></a>
+						</div>
+						<div class="user-content">
+							{% if loggedIn() and loggedUser() is same as(name) %}
+								<a href="/deletefriend/{{ fname }}" class="pull-right"><i class="fa fa-minus-circle"></i></a>
+							{% endif %}
+							<p>{{ fname }}</p>
+						</div>
 					</div>
 				{% endfor %}
 			{% endif %}
@@ -73,8 +86,15 @@
 				<h2 class="h3 col-md-12 col-xs-12">Amis qui me suivent</h2>
 				{% for fname in friends.followers %}
 					<div class="user-info-box col-md-6 col-xs-6">
-						<a href="/profile/{{ fname }}"><img alt="" src="/profile/{{ fname }}/ppic"></a>
-						<p>{{ fname }}</p>
+						<div class="user-pic">
+							<a href="/profile/{{ fname }}"><img alt="" src="/profile/{{ fname }}/ppic"></a>
+						</div>
+						<div class="user-content">
+							{% if loggedIn() and loggedUser() is same as(name) %}
+								<a href="/deletefriend/{{ fname }}" class="pull-right"><i class="fa fa-minus-circle"></i></a>
+							{% endif %}
+							<p>{{ fname }}</p>
+						</div>
 					</div>
 				{% endfor %}
 			{% endif %}
