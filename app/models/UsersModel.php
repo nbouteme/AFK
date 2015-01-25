@@ -14,7 +14,7 @@ class Users
 			$prenom,
 			$password,
 			$pseudo,]);
-
+3
         self::saveDesc($pseudo, array(
             'desc' => '',
             'username' => $pseudo
@@ -276,10 +276,11 @@ class Users
         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
         $headers .= 'X-insult: weeb' . "\r\n";
         $headers .= "From: Kuriyama Mirai <mirai@kuriyama.moe>";
-        $link = 'http://' . Config::get('App.Host') . "/valid/$user/" . md5($email . 'il etait un un un un petit navire qui n\'avait ja ja jamais navigué qui n\'avais ja ja jamais navigué hoé hoé');
+        $link = 'http://' . Config::get('App.Host') . "/validate/$user/" . md5($email . 'il etait un un un un petit navire qui n\'avait ja ja jamais navigué qui n\'avais ja ja jamais navigué hoé hoé');
         $message  = "Bienvenue sur AFK! Valide ton compte en cliquant sur ce lien: <a href=\"$link\">$link</a>";
 
-        mail($email, 'AFK へようこそ', $message, $headers);
+        mail($email, 'AFKへようこそ!', $message, $headers);
+        //lol regardez comment les caracteres ne sont plus aligné
     }
 
     public static function updateLastSeen($user)

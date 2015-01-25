@@ -114,7 +114,7 @@ class UserController
     public function showvalid()
     {
         Database::connect();
-        if(Users::isvalid($_SESSION)) Url::redirectTo('/login');
+        if(isset($_SESSION['user']) && Users::isvalid($_SESSION['user'])) Url::redirectTo('/login');
         View::render('validate');
     }
 
