@@ -26,7 +26,7 @@ class Message
         $message->addAttribute('time', time());
         $message->addAttribute('read', 0);
         $message->addChild('from', $from);
-        $message->addChild('to', $from);
+        $message->addChild('to', $to);
         $message->addChild('content', $content);
         $xml->asXML($fn);
     }
