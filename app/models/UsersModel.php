@@ -15,7 +15,10 @@ class Users
 			$password,
 			$pseudo,]);
 
-        self::saveDesc($pseudo, '');
+        self::saveDesc($pseudo, array(
+            'desc' => '',
+            'username' => $pseudo
+        ));
 	}
 
     private static function getQueryAttribute($id, $attribute)
@@ -75,19 +78,19 @@ class Users
         if($query->columnCount() !== 1)
             die('Couldn\'t find description in database');
         $username = $query->fetch()['PSEUDO'];
-
-        if(file_exists('app/cache/user-' .  md5($username) . '.xml'))
+        $fn = 'app/cache/user-' .  md5($username) . '.xml';
+        
+        if(file_exists($fn))
         {
-            $xmlStr = simplexml_load_file('app/cache/user-' .  md5($username) . '.xml');
-            $xmlStr->desc = $desc;
+            $xml = simplexml_load_file($fn);
+            $xml->desc = $desc;
         }
         else
         {
-            $xmlStr = new SimpleXMLElement('<xml/>');
-            $xmlStr->addChild('desc', $desc);
+            $xml = new SimpleXMLElement('<xml/>');
+            $xml->addChild('desc', $desc);
         }
         
-        $fn = 'app/cache/user-' .  md5($username) . '.xml';
         $xml->asXML($fn);
     }
 

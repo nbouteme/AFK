@@ -11,7 +11,7 @@ class View
 
     static public function load()
     {
-        self::$loader = new Twig_Loader_Filesystem('/www/app/views');
+        self::$loader = new Twig_Loader_Filesystem('app/views');
         self::$twig = new Twig_Environment(self::$loader);
         $functions = array();
 
