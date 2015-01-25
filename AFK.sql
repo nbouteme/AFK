@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 24, 2015 at 08:54 PM
+-- Generation Time: Jan 25, 2015 at 09:32 PM
 -- Server version: 10.0.15-MariaDB-log
 -- PHP Version: 5.6.5
 
@@ -41,14 +41,15 @@ CREATE TABLE IF NOT EXISTS `CONVERSATION` (
 CREATE TABLE IF NOT EXISTS `EVENT` (
   `ORGANISATEUR` int(11) NOT NULL,
   `IDEVENT` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `EVENT`
 --
 
 INSERT INTO `EVENT` (`ORGANISATEUR`, `IDEVENT`) VALUES
-(7, 0);
+(7, 2),
+(7, 3);
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `LISTAMIS` (
 --
 
 INSERT INTO `LISTAMIS` (`IDA`, `IDB`) VALUES
-(7, 8);
+(8, 7);
 
 -- --------------------------------------------------------
 
@@ -161,8 +162,9 @@ CREATE TABLE IF NOT EXISTS `PARTICIPEVENT` (
 --
 
 INSERT INTO `PARTICIPEVENT` (`IDEVENT`, `IDUSER`) VALUES
-(0, 8),
-(0, 6);
+(2, 6),
+(3, 6),
+(3, 8);
 
 -- --------------------------------------------------------
 
@@ -180,17 +182,22 @@ CREATE TABLE IF NOT EXISTS `USERS` (
   `CIVILITE` varchar(5) NOT NULL,
   `IDLISTAMIS` int(11) NOT NULL,
   `ISADMIN` tinyint(1) DEFAULT '0',
-  `NBMESSNONLU` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+  `NBMESSNONLU` int(11) DEFAULT NULL,
+  `VALID` tinyint(1) NOT NULL DEFAULT '0',
+  `AFKFOR` bigint(20) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `USERS`
 --
 
-INSERT INTO `USERS` (`ID`, `PSEUDO`, `EMAIL`, `PASSWORD`, `NOM`, `PRENOM`, `CIVILITE`, `IDLISTAMIS`, `ISADMIN`, `NBMESSNONLU`) VALUES
-(6, 'ko', 'ko@ko.de', '$2y$10$UIOb9.mUX2/7fbOR0Om4Ze/EU08.Bu/HiTiU5bVxMNgMJ8E4bh/H6', 'ko', 'ko', '1', 0, NULL, NULL),
-(7, 'na', 'nabil.boutemeur@gmail.com', '$2y$10$H6zAWJheafZyqi1o4WehTuiNTSBDPUgqZrqItJgriYnqe7RnnuB36', 'na', 'na', '1', 0, NULL, NULL),
-(8, 'sa', 'sa@jhkl.com', '$2y$10$jrJBrg4CdmB/JTWc51T3debY9p7oZksVhNB4/neQIZvr6fgzLVKzG', 'sa', 'sa', '1', 0, 0, NULL);
+INSERT INTO `USERS` (`ID`, `PSEUDO`, `EMAIL`, `PASSWORD`, `NOM`, `PRENOM`, `CIVILITE`, `IDLISTAMIS`, `ISADMIN`, `NBMESSNONLU`, `VALID`, `AFKFOR`) VALUES
+(6, 'ko', 'ko@ko.de', '$2y$10$UIOb9.mUX2/7fbOR0Om4Ze/EU08.Bu/HiTiU5bVxMNgMJ8E4bh/H6', 'ko', 'ko', '1', 0, NULL, NULL, 0, 0),
+(7, 'na', 'nabil.boutemeur@gmail.com', '$2y$10$H6zAWJheafZyqi1o4WehTuiNTSBDPUgqZrqItJgriYnqe7RnnuB36', 'na', 'na', '1', 0, NULL, NULL, 1, 20150125192851),
+(8, 'sa', 'sa@jhkl.com', '$2y$10$jrJBrg4CdmB/JTWc51T3debY9p7oZksVhNB4/neQIZvr6fgzLVKzG', 'sa', 'sa', '1', 0, 0, NULL, 0, 20150125184309),
+(9, 'jk', 'jk@kl', '$2y$10$Q2BTlmn2bLlsLRHWa4sR9uU6G8nQ3mES/EVOiEI1sReVojJl/o12O', 'jk', 'jk', '1', 0, 0, NULL, 0, 0),
+(10, 'sdfsafdsf', 'sonia.boutemeur@gmail.com', '$2y$10$lUVEe7LwesKsA8Dlc5DkSu7WxPFS6o6cERABQneFmwsrT/95l.oM6', 'sdfsdf', 'sdfsdf', '1', 0, 0, NULL, 0, 0),
+(11, 'lkjhl', 'mirai@kuriyama.moe', '$2y$10$NcYERknBseUu1kGVtQ83AOvrqWvzApG6BN2rR/ZZcIlcDzhZ0Fux6', 'jkhh', 'kjhlk', '1', 0, 0, NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -245,6 +252,12 @@ ALTER TABLE `MESSAGE`
   ADD PRIMARY KEY (`IDMESSAGE`);
 
 --
+-- Indexes for table `PARTICIPEVENT`
+--
+ALTER TABLE `PARTICIPEVENT`
+  ADD PRIMARY KEY (`IDEVENT`,`IDUSER`);
+
+--
 -- Indexes for table `USERS`
 --
 ALTER TABLE `USERS`
@@ -261,6 +274,11 @@ ALTER TABLE `USERSINTEREST`
 --
 
 --
+-- AUTO_INCREMENT for table `EVENT`
+--
+ALTER TABLE `EVENT`
+  MODIFY `IDEVENT` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `INTEREST`
 --
 ALTER TABLE `INTEREST`
@@ -269,7 +287,7 @@ ALTER TABLE `INTEREST`
 -- AUTO_INCREMENT for table `USERS`
 --
 ALTER TABLE `USERS`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
