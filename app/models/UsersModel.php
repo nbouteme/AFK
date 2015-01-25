@@ -14,7 +14,7 @@ class Users
 			$prenom,
 			$password,
 			$pseudo,]);
-3
+
         self::saveDesc($pseudo, array(
             'desc' => '',
             'username' => $pseudo
