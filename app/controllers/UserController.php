@@ -103,7 +103,7 @@ class UserController
             $_SESSION['emessage'] = 'Cet identifiant est trop long';
         }
         
-        if($_SESSION['error']['errored'])
+        if(isset($_SESSION['error']) && $_SESSION['error']['errored'])
             Url::redirectTo('/register');
 
         Users::create($data);

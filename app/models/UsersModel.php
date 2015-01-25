@@ -272,7 +272,7 @@ class Users
 
     public static function sendValidation($email)
     {
-        $user = getUserName($email);
+        $user     = self::getUserName($email);
         $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
         $headers .= 'X-insult: weeb' . "\r\n";
         $headers .= "From: Kuriyama Mirai <mirai@kuriyama.moe>";
