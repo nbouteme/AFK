@@ -63,7 +63,7 @@ class UserController
 
         Database::connect();
 
-        if(filter_var($data['email'], FILTER_VALIDATE_EMAIL))
+        if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL))
         {
             $_SESSION['error']['errored'] = true;
             $_SESSION['emessage'] = 'Cet email est invalide';
