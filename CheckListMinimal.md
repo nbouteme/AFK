@@ -18,83 +18,83 @@ Indentation :
 		- Une ligne vide doit suivre une ou plusieurs déclarations succesives.  
 	
 Technologies minimum à implémenter:
-- [ ] PHP
-- [ ] MySQL
-- [ ] XML
-- [ ] HTML 
-- [ ] CSS	
+- [x] PHP
+- [x] MySQL
+- [x] XML
+- [x] HTML 
+- [x] CSS	
 
 
 Autres critères de notation importants :
 
-- [ ] Programmation orienté objet 
-- [ ] Utilisation du modèle MVC et/ou Modèles de conceptions 
-- [ ] Evolutive,Modulaire,Robuste,Fiable,Fonctionnelle
+- [x] Programmation orienté objet 
+- [x] Utilisation du modèle MVC et/ou Modèles de conceptions 
+- [x] Evolutive,Modulaire,Robuste,Fiable,Fonctionnelle
 
 ## Liste des fonctionalitées minimales attendues ##
 
 Points minimum :
-- [ ] Un menu doit être présent sur toutes les pages web
+- [x] Un menu doit être présent sur toutes les pages web
 
-- [ ] Page d'accueil
+- [x] Page d'accueil
  
-	- [ ] Présentation du site 
-	- [ ] Formulaire Authentification
-	- [ ] Derniers événements organisés
+	- [x] Présentation du site 
+	- [x] Formulaire Authentification
+	- [x] Derniers événements organisés
 	- [ ] Nombres d'inscrits connectés
 	- [ ] Nombre d'événements
 
 
-- [ ] Système d'organisation évènements Créer / Inscrire
+- [x] Système d'organisation évènements Créer / Inscrire
  
-	- [ ] Un organisateur 
-	- [ ] Un type d'activité
-	- [ ] Une description
-	- [ ] Une image optionnelle
-	- [ ] Une date
-	- [ ] Un lieu de rendez-vous
-	- [ ] Une liste d'inscrit
+	- [x] Un organisateur 
+	- [x] Un type d'activité
+	- [x] Une description
+	- [x] Une image optionnelle
+	- [x] Une date
+	- [x] Un lieu de rendez-vous
+	- [x] Une liste d'inscrit
 
 
 
-- [ ] Un formulaire d'inscription
+- [x] Un formulaire d'inscription
 
-	- [ ] Enregistrement dans la BDD
-	- [ ] Nom
-	- [ ] Prenom
-	- [ ] Civil
-	- [ ] Pseudonyme
-	- [ ] Email
-	- [ ] Mot de passe encodé
-	- [ ] Avatar
+	- [x] Enregistrement dans la BDD
+	- [x] Nom
+	- [x] Prenom
+	- [x] Civil
+	- [x] Pseudonyme
+	- [x] Email
+	- [x] Mot de passe encodé
+	- [x] Avatar
 	- [ ] Autre
 	- [ ] Email de confirmation
 
 
-- [ ] Un annuaire des inscrits
+- [x] Un annuaire des inscrits
 
-	- [ ] Liste des inscrits par ordre lexicographique des pseudonymes
-	- [ ] Ajouter un bouton d'ajout d'amis
-
-
-- [ ] Une page de profil
-
-	- [ ] Afficher les informations personnelles (publique)
-	- [ ] Ses évènements (Organisateur/Inscrit)
+	- [x] Liste des inscrits par ordre lexicographique des pseudonymes
+	- [x] Ajouter un bouton d'ajout d'amis
 
 
-- [ ] Une liste d'amis
+- [x] Une page de profil
 
-	- [ ] Accéder à l'ensemble de nos amis
-	- [ ] Supprimer un de ses amis.
+	- [x] Afficher les informations personnelles (publique)
+	- [x] Ses évènements (Organisateur/Inscrit)
 
-- [ ] Une messagerie personnelle
 
-	- [ ] Visionner ses messages par ordre antéchronologique, en 
+- [x] Une liste d'amis
+
+	- [x] Accéder à l'ensemble de nos amis
+	- [x] Supprimer un de ses amis.
+
+- [x] Une messagerie personnelle
+
+	- [x] Visionner ses messages par ordre antéchronologique, en 
 	distinguant s’ils sont lus ou non
-	- [ ] Les messages ne doivent pas être stocké en BDD
-	- [ ] Envoyer des messages aux autres inscrits ami ou non
-	- [ ] Voir les messages précédemment envoyé
+	- [x] Les messages ne doivent pas être stocké en BDD
+	- [x] Envoyer des messages aux autres inscrits ami ou non
+	- [x] Voir les messages précédemment envoyé
 
 
 - [ ] Un agenda personnel avec calendrier pour chaque inscrit
