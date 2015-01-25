@@ -1,0 +1,64 @@
+{% extends "base.twig.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block head %}
+	<link href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/loginstyle.css">
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block content %}
+	<div class="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" id="main_connexion_page">
+		<div id="form-login" class="clearfix">
+			<form class="col-md-12 col-xs-12" role="form" method="post" action="{{ url('/register') }}">
+				<h2 class="h2">Inscrivez-vous!</h2>
+				{% if errored %}
+					<h5 class="h5 text-danger">Une erreur est survenue: {{ emessage }}</h5>
+				{% endif%}
+				<div class="row">
+					<div class="form-group col-md-6 col-xs-6">
+						<label for="nom">Nom</label>  
+						<input id="nom" name="nom" type="text" placeholder="" class="form-control input-md" required>
+					</div>
+					<div class="form-group col-md-6 col-xs-6">
+						<label for="prenom">Prénom</label>  
+						<input id="prenom" name="prenom" type="text" placeholder="" class="form-control input-md" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-6 col-xs-6">
+						<label for="login">Pseudo</label>
+						<input id="login" name="pseudo" type="text" placeholder="" class="form-control input-md" required>
+					</div>
+					<div class="form-group col-md-6 col-xs-6">
+						<label for="password">Mot de passe</label>
+						<input id="password" name="password" type="password" placeholder="" class="form-control input-md" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-6 col-xs-6">
+						<label for="email">Email</label>  
+						<input id="email" name="email" type="email" placeholder="" class="form-control input-md" required>
+					</div>
+					<div class="form-group col-md-6 col-xs-6">
+						<label class="col-md-4 col-xs-4 control-label" for="civilite">Civilité</label>
+						<select id="civilite" name="civilite" class="form-control">
+							<option value="1">Monsieur</option>
+							<option value="2">Madame</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<button id="send" name="send" class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4 btn btn-default">S'inscrire</button>
+					<div class="clearfix">
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+{% endblock %}

@@ -16,6 +16,9 @@
 		<div id="form-login">
 			<form method="post" action="/login">
 				<h4>Connectez-vous</h4>
+				{% if errored %}
+					<h5 class="h5 text-danger">Une erreur est survenue: {{ emessage }}</h5>
+				{% endif%}
 				<div class="form-group">
 					<input name="pseudo" type="text" id="userName" class="form-control input-sm chat-input" placeholder="Nom d'utilisateur" />
 				</div>

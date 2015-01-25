@@ -23,6 +23,15 @@ class EventController
         View::render('event/create', $data);
     }
 
+    public function delete($id)
+    {
+        Database::connect();
+        if(Event::getProp($id) != $_SESSION['user'])
+            Url::redirectTo('/event/' . $id);
+        Event::remove($id);
+        Url::redirectTo('/home');
+    }
+
     public function showEvent($id)
     {
         Database::connect();
@@ -49,11 +58,18 @@ class EventController
     {
         if(!isset($_SESSION['user']))
             Url::redirectTo('/');
+
+        Database::connect();
+        if(!Event::hasSubscribedFor($_SESSION['user'], $id))
+            Url::redirectTo('/event' . $id);
+
+        Event::unsubscribe($_SESSION['user'], $id);
+        Url::redirectTo('/event/' . $id);
     }
 
     private function getpicture($id, $type)
     {
-        $fn = 'app/cache/event-' . $type . 'pic-' . md5($id);
+        $fn = 'app/cache/event-' . $type . 'pic-' . $id;
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
 
         if(!file_exists($fn))

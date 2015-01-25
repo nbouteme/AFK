@@ -107,6 +107,9 @@ Router::register('GET', ['url'         => '/event/{id}/subscribe'   ,
 Router::register('GET', ['url'         => '/event/{id}/unsubscribe' ,
                          'controller'  => 'EventController'         ,
                          'action'      => 'unsubscribe']);
+Router::register('GET', ['url'         => '/event/{id}/delete' ,
+                         'controller'  => 'EventController'         ,
+                         'action'      => 'delete']);
 
 Router::register('GET', ['url'         => '/event/{id}/ppic'        ,
                          'controller'  => 'EventController'         ,

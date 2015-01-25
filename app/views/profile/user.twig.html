@@ -90,9 +90,6 @@
 							<a href="/profile/{{ fname }}"><img alt="" src="/profile/{{ fname }}/ppic"></a>
 						</div>
 						<div class="user-content">
-							{% if loggedIn() and loggedUser() is same as(name) %}
-								<a href="/deletefriend/{{ fname }}" class="pull-right"><i class="fa fa-minus-circle"></i></a>
-							{% endif %}
 							<p>{{ fname }}</p>
 						</div>
 					</div>

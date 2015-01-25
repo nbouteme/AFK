@@ -14,7 +14,7 @@ class Friend
 
 	public static function stopFriend($follower, $followed)
 	{
-		$query = Database::$PDO->prepare('DELETE * FROM LISTAMIS WHERE IDA = ? AND IDB = ?');
+		$query = Database::$PDO->prepare('DELETE FROM LISTAMIS WHERE IDA = ? AND IDB = ?');
 		$query->execute([Users::idOf($follower),
                          Users::idOf($followed),]);
 	}

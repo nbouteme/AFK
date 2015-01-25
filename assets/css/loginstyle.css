@@ -1,12 +1,11 @@
 html
 {
 	font: normal 14px Roboto,arial,sans-serif;
-	height: auto;
 }
 
 body
 {
-	background-image:url(/assets/img/geek.png);
+	background-image: url('/assets/img/geek.png');
 	color: white;
 	background-position: center;
 	background-size: cover;
@@ -15,158 +14,6 @@ body
 	height: 100%;
 }
 
-nav
-{
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    background: #262f3e;
-    min-height: 100%;
-    overflow: hidden;
-    position: fixed;
-    width: 64px;
-    z-index: 99999;
-}
-
-nav a
-{
-    color: #fff;
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    width: 100%;
-    cursor: pointer;
-    position: relative;
-}
-
-nav a:hover
-{
-    background: #19202c;
-}
-
-nav a i
-{
-    font-size: 1.25em;
-    padding-left: 4px;
-}
-
-nav .fa-times
-{
-    font-size: 0.85em;
-    position: absolute;
-    right: 6px;
-    margin-top: 3px;
-    color: #EEE;
-}
-
-nav .nav__avatar
-{
-    height: 50px;
-    margin-bottom: 20px;
-    padding: 0;
-}
-
-nav .nav__avatar span
-{
-    left: 58px;
-    top: 15px;
-}
-
-nav .nav__avatar div
-{
-    height: 50px;
-    width: 50px;
-}
-
-nav span
-{
-    font-size: 0.95em;
-    left: 51px;
-    line-height: 1.3;
-    position: absolute;
-    white-space: nowrap;
-}
-
-nav .nav__footer
-{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding-top: 7px;
-    background: #19202c;
-}
-
-nav .nav__footer i
-{
-    cursor: pointer;
-    position: absolute;
-    left: 142px;
-    bottom: 5px;
-    color: #3C5064;
-}
-
-nav .logo
-{
-    width: 78px;
-    margin-left: 6.5px;
-    margin-bottom: 3px;
-}
-
-nav .logo__wrap
-{
-    width: 42px;
-    overflow: hidden;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-}
-
-nav .nav__header
-{
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 3px;
-    margin-top: -20px;
-    margin-bottom: 8px;
-    background: #19202c;
-}
-
-nav:hover
-{
-    width: 160px;
-}
-
-nav:hover+#container-main
-{
-    margin-left: 160px!important;
-}
-
-nav:hover span
-{
-    display: inline;
-}
-
-nav:hover .logo__wrap
-{
-    width: 100%;
-    margin-left: 33px;
-}
-
-nav:hover .nav__header .logo__wrap
-{
-    margin-left: 33px;
-}
-
-#first_page, #second_page, #third_page, #main_connexion_page{
-	text-align: center;
-	height: 100%;
-}
-
-#logo{
-	height: 60%;
-}
 
 #form-login
 {
@@ -183,144 +30,9 @@ nav:hover .nav__header .logo__wrap
     box-shadow:0 1px 0 #cfcfcf;
 }
 
-h4{
-	padding-bottom: 15px;
-	font-size: 18px;
-}
-
-nav a
-{
-    color: #fff;
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    width: 100%;
-    cursor: pointer;
-    position: relative;
-}
-
-nav a:hover
-{
-    background: #19202c;
-}
-
-nav a i
-{
-    font-size: 1.25em;
-    padding-left: 4px;
-}
-
-nav .fa-times
-{
-    font-size: 0.85em;
-    position: absolute;
-    right: 6px;
-    margin-top: 3px;
-    color: #EEE;
-}
-
-nav .nav__avatar
-{
-    height: 50px;
-    margin-bottom: 20px;
-    padding: 0;
-}
-
-nav .nav__avatar span
-{
-    left: 58px;
-    top: 15px;
-}
-
-nav .nav__avatar div
-{
-    height: 50px;
-    width: 50px;
-}
-
-nav span
-{
-    font-size: 0.95em;
-    left: 51px;
-    line-height: 1.3;
-    position: absolute;
-    white-space: nowrap;
-}
-
-nav .nav__footer
-{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding-top: 7px;
-    background: #19202c;
-}
-
-nav .nav__footer i
-{
-    cursor: pointer;
-    position: absolute;
-    left: 142px;
-    bottom: 5px;
-    color: #3C5064;
-}
-
-nav .logo
-{
-    width: 78px;
-    margin-left: 6.5px;
-    margin-bottom: 3px;
-}
-
-nav .logo__wrap
-{
-    width: 42px;
-    overflow: hidden;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-}
-
-nav:hover
-{
-    width: 160px;
-}
-
-nav:hover+#container-main
-{
-    margin-left: 160px!important;
-}
-
-nav:hover span
-{
-    display: inline;
-}
-
-nav:hover .logo__wrap
-{
-    width: 100%;
-    margin-left: 33px;
-}
-
-nav:hover .nav__header .logo__wrap
-{
-    margin-left: 33px;
-}
-
-#logo{
-	height: 60%;
-}
-
 #form-login, #form-suscribe{
     background-color: #EDEDED;
     border-color:#d2d2d2;
-	/*transform: translateY(-50%);*/
-}
-
-#main_connexion_page
-{
-	margin-top: 15%;
 }
 
 label > input[type=file]
@@ -331,4 +43,9 @@ label > input[type=file]
 .event-form
 {
 	color: #111;
+}
+
+#container-main
+{
+	padding-top: 150px;
 }

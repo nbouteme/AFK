@@ -14,11 +14,9 @@ class Event
 	public static function subscribe($user, $id)
 	{
         if(self::hasSubscribedFor($user, $id)) return;
-
         $query = Database::$PDO->prepare('INSERT INTO PARTICIPEVENT (IDUSER, IDEVENT) VALUES(?, ?)');
         $idu = Users::idOf($user);
-		$query->execute([$idu, $id]);
-        
+		$query->execute([$idu, $id]);        
 	}
 
 	public static function unsubscribe($user, $id)
@@ -42,7 +40,7 @@ class Event
 	{
 		$query = Database::$PDO->prepare('SELECT * FROM EVENT WHERE IDEVENT = ?');
 		$query->execute([$id]);
-        return $query->columnCount() === 1;
+        return $query->fetch(PDO::FETCH_NUM)[0] != 0;
 	}
 
     public static function getData($id)
@@ -128,6 +126,15 @@ class Event
         foreach($res as $row)
             $data[] = self::getData($row['IDEVENT']);
         return $data;
+    }
+
+    public static function remove($id)
+    {
+        if(!self::exists($id)) return;
+        $query =  Database::$PDO->prepare("DELETE FROM EVENT WHERE IDEVENT = ?");
+        $query->execute([$id]);
+        $query =  Database::$PDO->prepare("DELETE FROM PARTICIPEVENT WHERE IDEVENT = ?");
+        $query->execute([$id]);
     }
 
     public static function allStartingWith($prefix)

@@ -23,6 +23,6 @@ class FriendController
 
         if(Friend::isFriendOf($_SESSION['user'], $name))
             Friend::stopFriend($_SESSION['user'], $name);
-        Url::redirectTo('/profile/' . $name);
+        Url::redirectTo('/profile/' . $_SESSION['user']);
     }
 }

@@ -239,4 +239,38 @@ class Users
         return $data;
     }
 
+    public static function valid($id)
+    {
+        if(!self::exists) return false;
+        $user = self::getUserName($id);
+        $query =  Database::$PDO->prepare("SELECT * FROM USERS WHERE VALID = 0 AND PSEUDO = ?");
+        $query->execute([$user]);
+        if($query->fetch(PDO::FETCH_NUM)[0] == 0) return false;
+        $query =  Database::$PDO->prepare("UPDATE USERS SET VALID = 1 WHERE PSEUDO = ?");
+        $query->execute([$user]);
+        return true;
+    }
+
+    public static function sendValidation($email)
+    {
+        $user = getUserName($email);
+        $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+        $headers .= 'X-insult: weeb' . "\r\n";
+        $message = 'Bienvenue sur AFK! Valide ton compte en cliquant sur ce lien: <a>';
+        $message .= 'http://' . Config::get('App.Host') . "/valid/$user/" . md5($email . 'il etait un un un un petit navire qui n\'avait ja ja jamais navigué qui n\'avais ja ja jamais navigué hoé hoé');
+        mail($email, 'AFK he youkoso', $message, $headers);
+    }
+
+    public static function updateLastSeen($user)
+    {
+        $query = Database::$PDO->prepare("UPDATE USERS SET AFKFOR = NOW() WHERE PSEUDO = ?");
+        $query->execute([$user]);
+    }
+
+    public static function getActiveNumber()
+    {
+        $query =  Database::$PDO->prepare("SELECT COUNT(*) FROM USERS WHERE AFKFOR > DATE_SUB(NOW(), INTERVAL 5 MINUTE)");
+        $query->execute();
+        return $query->fetch()[0];
+    }
 }

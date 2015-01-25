@@ -26,8 +26,8 @@ class ProfileController
         $data = array();
         $data['name'] = $user;
         $data['userData'] = Users::getDescription($user);
-        //        $data['tastes'] = Users::getInterests($user);
 
+        
         View::render('profile/edit', $data);        
     }
 
@@ -38,7 +38,7 @@ class ProfileController
         Database::connect();
 
         $data = array();
-        $data['up_error'] = 0;
+
         $data['desc'] = $_POST['desc'];
         if(file_exists($_FILES['ppic']['tmp_name']))
         {

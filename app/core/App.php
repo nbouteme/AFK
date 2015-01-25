@@ -21,6 +21,13 @@ class App
             });
         Config::load();
         Router::load();
+
+        if(isset($_SESSION['user']))
+        {
+            Database::connect();
+            Users::updateLastSeen($_SESSION['user']);
+            Database::disconnect();
+        }
         Router::dispatch();
     }
 }
