@@ -35,17 +35,15 @@ class Message
     {
         $convs = glob("app/cache/message-*$user*");
 
-        //        print_r($convs);
-        //die;
         $lastMessages = array();
         foreach($convs as $fn)
         {
             $xml = simplexml_load_file($fn);
             $data = array();
-            $data['user'] = $xml->from == $user ? $xml->to : $xml->from;
             $data['lastsend'] = $xml->from;
             $last = $xml->xpath("/xml/message[last()]")[0];
             $data['lasttime'] = $last['time'];
+            $data['user'] = $last->from == $user ? $last->to : $last->from;
             $data['content'] = $last->content;
             $lastMessages[] = $data;
         }
