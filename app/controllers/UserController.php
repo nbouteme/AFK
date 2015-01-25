@@ -49,7 +49,7 @@ class UserController
         else
         {
             $_SESSION['error']['errored'] = true;
-            $_SESSION['emessage'] = 'L\'identification a échoué, vérifiez vos identifiants';
+            $_SESSION['emessage'] = 'L\'identification a échoué, vérifiez vos identifiants, et que votre compte soit bien activé';
 
             Url::redirectTo('/login');
         }

@@ -4,7 +4,7 @@ class Auth
 {
     public static function validate($id, $password)
     {
-        if(!Users::exists($id)) return false;
+        if(!Users::exists($id) || !Users::isvalid($id)) return false;
         if(password_verify($password, Users::getPassword($id)))
         {
             $_SESSION['user'] = Users::getUsername($id);
